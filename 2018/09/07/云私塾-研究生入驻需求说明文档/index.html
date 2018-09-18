@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="￠微笑的鱼… Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="￠微笑的鱼…" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        ￠微笑的鱼…
+        
+    </title>
+
+    <link rel="canonical" href="http://weixiaodeyu.github.io/2018/09/07/云私塾-研究生入驻需求说明文档/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    ￠微笑的鱼…
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/tags/">标签分类</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="https://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://oco8bvfr8.qnssl.com/blog-bg-black-run.jpg?imageView2/1/w/1400/h/400/interlace/1/q/80')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 ￠微笑的鱼…
+                        <span>
+                          日期 2018-09-07
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#云私塾"
+                           title="云私塾">云私塾</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="云私塾-研究生端需求说明文档"><a href="#云私塾-研究生端需求说明文档" class="headerlink" title="云私塾-研究生端需求说明文档"></a>云私塾-研究生端需求说明文档</h1><table>
+<thead>
+<tr>
+<th>文档版本号：</th>
+<th>2.0</th>
+<th>文档编号：</th>
+<th>YSS_PRD_2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档密级：</td>
+<td>内部文档</td>
+<td>归属部门/项目：</td>
+<td>国内考试事业部</td>
+</tr>
+<tr>
+<td>产品名：</td>
+<td>云私塾</td>
+<td>子系统名：</td>
+<td>研究生入驻及管理</td>
+</tr>
+<tr>
+<td>编写人：</td>
+<td>付荣</td>
+<td>编写日期：</td>
+<td>20180915</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一、研究生端产品概述"><a href="#一、研究生端产品概述" class="headerlink" title="一、研究生端产品概述"></a>一、研究生端产品概述</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>根据项目产品规划，将项目产品区分为三个模块：考生端、研究生端、真题库，目前新东方不缺前端流量，只是我们没有办法提供相应的供给，所有优先开发供给端——研究生端。</p>
+<blockquote>
+<ul>
+<li>前端系统：<ul>
+<li>研究生申请入驻（H5）-3个页面；</li>
+<li>研究生个人主页（H5）-1个页面；</li>
+</ul>
+</li>
+<li>后端系统：<ul>
+<li>研究生入驻审核；</li>
+<li>补充资料审核</li>
+<li>研究生管理；</li>
+<li>研究生入驻统计；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-相关角色"><a href="#2-相关角色" class="headerlink" title="2. 相关角色"></a>2. 相关角色</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">角色类型</th>
+<th style="text-align:left">角色描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">游客</td>
+<td style="text-align:left">进入服务号的访客，未完成研究生入驻申请；</td>
+</tr>
+<tr>
+<td style="text-align:center">认证通过研究生</td>
+<td style="text-align:left">完成研究生申请入驻，且入驻审核通过；</td>
+</tr>
+<tr>
+<td style="text-align:center">审核不通过研究生</td>
+<td style="text-align:left">完成研究生申请入驻，且未通过入驻审核；</td>
+</tr>
+<tr>
+<td style="text-align:center">待审核研究生</td>
+<td style="text-align:left">完成研究生申请入驻，后台尚未审核；</td>
+</tr>
+<tr>
+<td style="text-align:center">禁用研究生</td>
+<td style="text-align:left">被后端封禁的研究生；</td>
+</tr>
+<tr>
+<td style="text-align:center">管理员</td>
+<td style="text-align:left">云私塾管理员；</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-角色权限"><a href="#3-角色权限" class="headerlink" title="3.角色权限"></a>3.角色权限</h3><p>1表示可以访问。</p>
+<table>
+<thead>
+<tr>
+<th>页面名称/角色状态</th>
+<th style="text-align:center">游客</th>
+<th style="text-align:center">认证通过</th>
+<th style="text-align:center">审核不通过</th>
+<th style="text-align:center">待审核</th>
+<th>禁用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>注册引导页</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>注册页</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>注册完成页</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td></td>
+</tr>
+<tr>
+<td>个人主页</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td></td>
+</tr>
+<tr>
+<td>禁用提页面</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-产品目标"><a href="#4-产品目标" class="headerlink" title="4. 产品目标"></a>4. 产品目标</h3><p>初步完成云私塾系统中，<strong>研究生申请入驻、个人信息管理、审核查询</strong>等基础功能的闭环，保证研究生能够高校快捷的进入到云私塾系统，完成云私塾研究生储备和管理。</p>
+<h2 id="二、研究生端产品结构"><a href="#二、研究生端产品结构" class="headerlink" title="二、研究生端产品结构"></a>二、研究生端产品结构</h2><h3 id="1-功能框架结构图"><a href="#1-功能框架结构图" class="headerlink" title="1. 功能框架结构图"></a>1. 功能框架结构图</h3><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8twz4yluj31s75lmtza.jpg" alt=""></p>
+<h3 id="2-数据定义及说明"><a href="#2-数据定义及说明" class="headerlink" title="2. 数据定义及说明"></a>2. 数据定义及说明</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">字段名称</th>
+<th style="text-align:center">数据定义</th>
+<th>数据来源</th>
+<th>数据使用场景</th>
+<th>是否可修改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">入驻时间</td>
+<td style="text-align:center">用户提交入驻申请的时间</td>
+<td>记录用户第一次进入注册完成页的时间。</td>
+<td>管理后台</td>
+<td>不可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">研究生ID<br>（简称ID）</td>
+<td style="text-align:center">数据库中，研究生能的身份</td>
+<td>新用户完成入驻申请后自动生成，Y00001开始自动生成。</td>
+<td>研究生个人主页、管理后台</td>
+<td>不可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">昵称</td>
+<td style="text-align:center">用户微信昵称</td>
+<td>抓取用户微信授权</td>
+<td>考生端展示、研究生个人主页、管理后台</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">头像</td>
+<td style="text-align:center">用户微信头像</td>
+<td>抓取用户微信授权</td>
+<td>考生端展示、研究生个人主页、管理后台</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">性别</td>
+<td style="text-align:center">用户性别</td>
+<td>默认抓取用户微信性别、用户可以在注册后个人主页选择</td>
+<td>考生端展示、研究生个人主页、管理后台</td>
+<td>个人主页可修改、管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">电话</td>
+<td style="text-align:center">用户的手机号码</td>
+<td>注册页用户输入并验证有效性</td>
+<td>研究生个人主页、管理后台</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">院校所在省份</td>
+<td style="text-align:center">中国34个省</td>
+<td>研招网数据库</td>
+<td>所有数据检索结构、后台</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">院校名称</td>
+<td style="text-align:center">研究生院校名称</td>
+<td>研招网数据库</td>
+<td>所有数据检索结构、后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">专业名称</td>
+<td style="text-align:center">研究生专业名称</td>
+<td>研招网数据库</td>
+<td>所有数据检索结构、后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">入学年份</td>
+<td style="text-align:center">研究生入学的年份</td>
+<td>注册页选择<br>（范围：2017-2020）</td>
+<td>后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">11*</td>
+<td style="text-align:center">录取方式</td>
+<td style="text-align:center">研究生录取的形式</td>
+<td>注册页选择<br>第一志愿录取和调剂录取</td>
+<td>后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">研究方向</td>
+<td style="text-align:center">读研时确定的研究方向</td>
+<td>研招网数据库</td>
+<td>后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">指导老师</td>
+<td style="text-align:center">研究生指导老师</td>
+<td>用户个人主页输入</td>
+<td>后台、研究生个人主页</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">考研总分</td>
+<td style="text-align:center">研究生初试总成绩</td>
+<td>用户个人主页输入</td>
+<td>后台、研究生个人主页</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">考试科目</td>
+<td style="text-align:center">研究生初试科目</td>
+<td>研究生个人主页选择</td>
+<td>后台、研究生个人主页、考生前端</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">科目成绩</td>
+<td style="text-align:center">初试科目成绩</td>
+<td>研究生个人主页输入</td>
+<td>后台、研究生个人主页</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">17*</td>
+<td style="text-align:center">原报考院校所在地</td>
+<td style="text-align:center">同7</td>
+<td>个人主页选择</td>
+<td>录取方式为“调剂录取”时增加该字段；</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">18*</td>
+<td style="text-align:center">原报考院校名称</td>
+<td style="text-align:center">同8</td>
+<td>个人主页选择</td>
+<td>录取方式为“调剂录取”时增加该字段；</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">19*</td>
+<td style="text-align:center">原报专业</td>
+<td style="text-align:center">同9</td>
+<td>个人主页选择</td>
+<td>录取方式为“调剂录取”时增加该字段；</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">20*</td>
+<td style="text-align:center">初试科目</td>
+<td style="text-align:center">同15</td>
+<td>个人主页选择</td>
+<td>录取方式为“调剂录取”时增加该字段；</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">21*</td>
+<td style="text-align:center">专业课成绩</td>
+<td style="text-align:center">同16</td>
+<td>个人主页输入</td>
+<td>录取方式为“调剂录取”时增加该字段；</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">22</td>
+<td style="text-align:center">认证状态</td>
+<td style="text-align:center">审核未通过（认证未通过）、认证通过、待审核、禁用</td>
+<td>后端规则设定</td>
+<td>研究生个人主页、后台</td>
+<td>管理端可修改</td>
+</tr>
+<tr>
+<td style="text-align:center">23</td>
+<td style="text-align:center">自我介绍</td>
+<td style="text-align:center">用户的个人介绍</td>
+<td>用户个人主页输入</td>
+<td>研究生个人主页、考生前端</td>
+<td>个人主页可修改、管理端可修改</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>所有可以修改的数据，修改方式同产生方式（下拉选择、复选框、手动输入等）。</p>
+</blockquote>
+<h3 id="3-主要业务流程"><a href="#3-主要业务流程" class="headerlink" title="3. 主要业务流程"></a>3. 主要业务流程</h3><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv4iz97mhuj30gq0sigm7.jpg" alt=""></p>
+<h3 id="4-页面原型"><a href="#4-页面原型" class="headerlink" title="4. 页面原型"></a>4. 页面原型</h3><p>页面原型地址如下：<a href="https://weixiaodeyu.github.io/yunsishu/">https://weixiaodeyu.github.io/yunsishu/</a></p>
+<h2 id="三、研究生端"><a href="#三、研究生端" class="headerlink" title="三、研究生端"></a>三、研究生端</h2><h3 id="1-研究生入驻申请"><a href="#1-研究生入驻申请" class="headerlink" title="1. 研究生入驻申请"></a>1. 研究生入驻申请</h3><h4 id="1-1-研究生申请入驻信息结构图"><a href="#1-1-研究生申请入驻信息结构图" class="headerlink" title="1.1 研究生申请入驻信息结构图"></a>1.1 研究生申请入驻信息结构图</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8y2qvnhrj316t0emwex.jpg" alt=""></p>
+<h4 id="1-3-研究生申请入驻流程图"><a href="#1-3-研究生申请入驻流程图" class="headerlink" title="1.3 研究生申请入驻流程图"></a>1.3 研究生申请入驻流程图</h4><ul>
+<li>注册页，获取用户授权，拉取用户微信信息的逻辑图：</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8xsu6tjaj31m60n80u4.jpg" alt=""></p>
+<p><strong>用户授权：</strong></p>
+<table>
+<thead>
+<tr>
+<th>用户场景</th>
+<th>用户从注册页，点击”立即入驻“时，拉取微信授权</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>功能描述</td>
+<td>通过授权获取用户以下信息：<br>微信头像、微信昵称、位置等其他微信开放信息</td>
+</tr>
+<tr>
+<td>需求描述</td>
+<td>1.用户进入注册页时拉取授权，授权成功则进入页面；<br>2.用户点击授权后成为授权用户；<br>3.若用户未点击授权，再次点击”立即入驻“时重新拉取授权；</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-4-页面逻辑"><a href="#1-4-页面逻辑" class="headerlink" title="1.4 页面逻辑"></a>1.4 页面逻辑</h4><p>==注册流程分为三个部分：注册页引导页、注册页、注册完成页，详情如下。==</p>
+<h5 id="1-4-1注册引导页"><a href="#1-4-1注册引导页" class="headerlink" title="1.4.1注册引导页"></a>1.4.1注册引导页</h5><p><strong>用途</strong>：此页的主要目的是让用户通过引导图的说明，清晰明了的知道我们是做什么的？入驻后能获得什么？快速建立用户认知。</p>
+<p>页面分为两部分：1个底页，三张可滑动的图片。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv4jdit9x0j31w81187wh.jpg" alt="">        </p>
+<p><strong>页面详细说明：</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv4jizy1tbj30iv0dm0ve.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：</p>
+<ul>
+<li>图片不支持循环滚动；</li>
+<li>滑动到最后一页继续往左滑动，自动进入注册页；</li>
+</ul>
+</blockquote>
+<h5 id="1-4-2-注册页"><a href="#1-4-2-注册页" class="headerlink" title="1.4.2 注册页"></a>1.4.2 注册页</h5><p><strong>用途</strong>：此页主要用于研究生用户填写读研相关信息，完成信息的自动化录入，并通过系统审核后，成为系统内的合格研究生，向考生提供相关考研辅导。</p>
+<p><strong>页面Damon：</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8y6z8asuj30ku10atah.jpg" alt=""></p>
+<blockquote>
+<p>该页面主要为了获取研究生用户有效信息。具体需求如下：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv93f8icipj31ax14ytcn.jpg" alt=""></p>
+<ul>
+<li>在入驻信息的选择处：地区-院校-专业，按照父级关系逐级选择；</li>
+<li>证件上传：<ul>
+<li>限制最多上传5张照片；</li>
+<li>文件类型：支持PNG、JPG等常见图片格式，点击上传，调取手机相册或拍照；</li>
+</ul>
+</li>
+<li>用户入驻后再次访问注册链接：<ul>
+<li>认证通过：正常访问；</li>
+<li>待审核：直接进入注册完成页；</li>
+<li>审核未通过：直接进入注册页，保留上次填写的缓存数据；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h5 id="1-4-3-注册完成页"><a href="#1-4-3-注册完成页" class="headerlink" title="1.4.3 注册完成页"></a>1.4.3 注册完成页</h5><p>该页面，主要引导用户在注册后进入其个人主页，先行熟悉系统，并趁着用户的热情还在，引导用户提交更多的资料信息。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv5fq0c1ffj30ku112q3h.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：该页面，点击“我的主页”跳转“个人主页”；</p>
+<ul>
+<li>此处因“录取方式”不同，进入个人主页后，页面内容不同；<ul>
+<li>第一志愿录取：进入个人主页-页面W3；</li>
+<li>调剂录取：进入个人主页-页面W4；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-5-数据需求"><a href="#1-5-数据需求" class="headerlink" title="1.5 数据需求"></a>1.5 数据需求</h4><blockquote>
+<ul>
+<li>数据埋点<ul>
+<li>授权登录：点击取消人数、点击授权人数；</li>
+<li>注册引导页访问PV/UV；</li>
+<li>进入注册页人数；</li>
+<li>进入注册完成页人数；</li>
+<li>注册完成页面——“我的主页”点击人数；</li>
+</ul>
+</li>
+<li>数据缓存<ul>
+<li>新用户和审核未通过用户，访问注册页时，缓存注册页已输入的数据；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-6-用户访问场景"><a href="#1-6-用户访问场景" class="headerlink" title="1.6 用户访问场景"></a>1.6 用户访问场景</h4><p>当用户访问注册链接时，判断用户身份，根据用户的认证状态，进入页面不同：</p>
+<blockquote>
+<p>用户访问注册页的几种情况：</p>
+<ul>
+<li>新用户：正常注册</li>
+<li>认证状态为”认证通过”：进入个人主页</li>
+<li>认证状态为”审核不通过”：进入注册页，缓存注册信息</li>
+<li>认证状态为”待审核”：进入注册完成页</li>
+</ul>
+</blockquote>
+<h3 id="2-研究生-个人主页"><a href="#2-研究生-个人主页" class="headerlink" title="2. 研究生-个人主页"></a>2. 研究生-个人主页</h3><h4 id="2-1-个人主页信息结构图"><a href="#2-1-个人主页信息结构图" class="headerlink" title="2.1 个人主页信息结构图"></a>2.1 个人主页信息结构图</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcebcwz2ej31dk1um45o.jpg" alt=""></p>
+<h4 id="2-2-个人主页页面结构"><a href="#2-2-个人主页页面结构" class="headerlink" title="2.2 个人主页页面结构"></a>2.2 个人主页页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcjcszc70j30n40fsaah.jpg" alt=""></p>
+<h4 id="2-3-页面原型"><a href="#2-3-页面原型" class="headerlink" title="2.3 页面原型"></a>2.3 页面原型</h4><p>页面的原型图地址为：</p>
+<h5 id="2-3-1-我的主页：W1"><a href="#2-3-1-我的主页：W1" class="headerlink" title="2.3.1 我的主页：W1"></a>2.3.1 我的主页：W1</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcf1nwgqqj30ku0lfdh5.jpg" alt=""></p>
+<blockquote>
+<p>页面需求详情：</p>
+<ul>
+<li><p>页面前置条件：用户已完成入驻申请，且认证状态为“认证通过”或“待审核”；</p>
+</li>
+<li><p>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取）；</p>
+<ul>
+<li>“我的入驻信息”页面——第一志愿录取页面：信息项同W1</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj381n51j30dt0f2weq.jpg" alt=""></p>
+<ul>
+<li>“我的入驻信息”页面——调剂录取页面：信息项同W2</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj3fzc5tj30ag0g2q37.jpg" alt=""></p>
+</li>
+<li><p>“问题”反馈点击后如下：</p>
+</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj49j9oxj30ab09kt8l.jpg" alt=""></p>
+</blockquote>
+<h5 id="2-3-2-我的主页：W2"><a href="#2-3-2-我的主页：W2" class="headerlink" title="2.3.2 我的主页：W2"></a>2.3.2 我的主页：W2</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdjk118ynj30kt0nd3zv.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：</p>
+<ul>
+<li>页面前置条件：用户已完成入驻认证，且认证状态为“审核不通过”；</li>
+<li>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取），详情同2.3.1；</li>
+</ul>
+</blockquote>
+<h5 id="2-3-3-我的主页：W3"><a href="#2-3-3-我的主页：W3" class="headerlink" title="2.3.3 我的主页：W3"></a>2.3.3 我的主页：W3</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcfdppsujj30ku146jtl.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：</p>
+<ul>
+<li>前置条件：用户通过“注册完成页”进入个人主页且“录取方式“为”第一志愿录取”；</li>
+<li>保存提交后：进入个人主页W1。</li>
+</ul>
+</blockquote>
+<h5 id="2-3-4-我的主页：W4"><a href="#2-3-4-我的主页：W4" class="headerlink" title="2.3.4 我的主页：W4"></a>2.3.4 我的主页：W4</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvchjpnsi2j30l41aogo1.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：</p>
+<ul>
+<li>前置条件：用户通过“注册完成页”进入个人主页且“录取方式“为”调剂录取”；</li>
+<li>保存提交后：进入个人主页W1。</li>
+</ul>
+</blockquote>
+<h3 id="3-研究生管理后台"><a href="#3-研究生管理后台" class="headerlink" title="3. 研究生管理后台"></a>3. 研究生管理后台</h3><h4 id="3-1-研究生管理后台信息结构图"><a href="#3-1-研究生管理后台信息结构图" class="headerlink" title="3.1 研究生管理后台信息结构图"></a>3.1 研究生管理后台信息结构图</h4><p>主要完成研究生入驻相关信息的审核，信息结构如下。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvclz04vnsj31lw4es1bi.jpg" alt=""></p>
+<h4 id="3-2-后端页面原型"><a href="#3-2-后端页面原型" class="headerlink" title="3.2 后端页面原型"></a>3.2 后端页面原型</h4><h5 id="3-2-1-研究生入驻审核"><a href="#3-2-1-研究生入驻审核" class="headerlink" title="3.2.1 研究生入驻审核"></a>3.2.1 研究生入驻审核</h5><ul>
+<li>入驻待审核列表：</li>
+</ul>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcpcigz9uj30j607uaap.jpg" alt=""></p>
+<blockquote>
+<p>需求详情：</p>
+<p>排序：按照入驻时间倒叙排列，入驻时间最新的在第一条；</p>
+</blockquote>
+<ul>
+<li><p>审核页：</p>
+<p>所有数据来源于用户前端注册数据及对应的微信数据，由服务器返回。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcpjryttjj30r80sat9g.jpg" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p>需求详情：</p>
+<ul>
+<li>研究生ID：从Y00001默认连续生成；</li>
+<li>有效证件和头像：图片点击可放大；</li>
+<li>审核意见：根据审核结果调用内置选项（运营提供），同时支持手动输入；</li>
+</ul>
+</blockquote>
+<h5 id="3-2-2-研究生补充资料审核"><a href="#3-2-2-研究生补充资料审核" class="headerlink" title="3.2.2 研究生补充资料审核"></a>3.2.2 研究生补充资料审核</h5><ul>
+<li><p>补充资料审核列表：<img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg1b0ajgj30na0alq42.jpg" alt=""></p>
+<blockquote>
+<p>根据研究生认证状态不同，下方分为三个表格，默认显示待审核状态对应的表格：</p>
+<p>1.待审核：刚入驻，还未审核；</p>
+<p>2.认证通过：已完成入驻认证；</p>
+<p>3.认证未通过：完成入驻，但审核未通过；</p>
+<p>备注：认证状态为“禁用”的用户，不可修改自己的主页，所以这里不做考虑；</p>
+</blockquote>
+</li>
+<li><p>补充资料审核详情页面：区分录取方式“第一志愿”对应页面B1和“调剂录取”对应页面B2；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg7szojrj31nl19itbh.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>​    <img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdgavzxssj30ra0g1dgl.jpg" alt=""></p>
+<blockquote>
+<p>该页面分为三个状态：全部、认证通过、审核未通过，作为筛选tab.</p>
+<p>​    1.全部：含认证状态为待审核、认证通过、审核未通过、禁用</p>
+<p>​    2.认证通过：完成入驻且认证通过</p>
+<p>​    3.审核未通过：完成入驻但审核未通过</p>
+<p>汇总数据：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdggbcxclj30kz04taa3.jpg" alt=""></p>
+<p>​    从数据库计算对应数据，并返回在这里，每日固定时间刷新；</p>
+<p>搜索：</p>
+<p>​    1.支持联动搜索和独立搜索；</p>
+<p>​    2.入驻时间，支持时间选择；</p>
+</blockquote>
+<h5 id="3-2-4-研究生数据统计表"><a href="#3-2-4-研究生数据统计表" class="headerlink" title="3.2.4  研究生数据统计表"></a>3.2.4  研究生数据统计表</h5><p>该表，用来统计各大高校、各类状态研究生入驻的情况，便于市场调整入驻激励措施及推进方向。对应字段定义如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>定义</th>
+<th>数据来源</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>序号</td>
+<td>表示行数</td>
+<td>自动生成</td>
+</tr>
+<tr>
+<td>院校数量</td>
+<td>系统中所有院校的总数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>院校属性</td>
+<td>院校是否为985/211/其他</td>
+<td>数据库返回</td>
+</tr>
+<tr>
+<td>专业数量</td>
+<td>每个学校对应的专业总数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>专业总数</td>
+<td>学校数量*对应专业数量</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>认证通过研究生人数</td>
+<td>对应高校认证通过的研究生人数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>认证通过研究生人数</td>
+<td>所有高校认证通过研究生的人数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>第一志愿通过认证人数</td>
+<td>认证通过人数中录取方式为第一志愿录取的人数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>调剂认证通过人数</td>
+<td>认证通过人数中录取方式为调剂录取的人数</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>覆盖专业数量</td>
+<td>对应状态研究生所能覆盖的专业数量(去重后的数量）</td>
+<td>服务器计算返回</td>
+</tr>
+<tr>
+<td>总计</td>
+<td>将下方对应各列数据求和</td>
+<td>服务器计算返回</td>
+</tr>
+</tbody>
+</table>
+<p>页面原型：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdhg22uocj30n908e0tb.jpg" alt=""></p>
+<h3 id="4-其他需求"><a href="#4-其他需求" class="headerlink" title="4. 其他需求"></a>4. 其他需求</h3><h4 id="4-1-性能需求"><a href="#4-1-性能需求" class="headerlink" title="4.1 性能需求"></a>4.1 性能需求</h4><table>
+<thead>
+<tr>
+<th>模块</th>
+<th>场景</th>
+<th>响应时间</th>
+<th>成功率</th>
+<th>并发</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>获取验证码</td>
+<td>注册页获取验证码</td>
+<td>&lt;3s</td>
+<td>99.9%</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>证件上传</td>
+<td>注册页有效证件上传</td>
+<td>&lt;3s</td>
+<td>99.9%</td>
+<td>10000</td>
+</tr>
+</tbody>
+</table>
+<h4 id="4-2-兼容性需求"><a href="#4-2-兼容性需求" class="headerlink" title="4.2 兼容性需求"></a>4.2 兼容性需求</h4><p>IOS端：支持iOS 7.0、 8.0、 9.0、 10.0，与ipad、iphone、itouch兼容</p>
+<p>Android：兼容安卓5.0版本及以上版本</p>
+<h4 id="4-3-消息通知需求"><a href="#4-3-消息通知需求" class="headerlink" title="4.3 消息通知需求"></a>4.3 消息通知需求</h4><h5 id="4-3-1-短信验证码"><a href="#4-3-1-短信验证码" class="headerlink" title="4.3.1 短信验证码"></a>4.3.1 短信验证码</h5><p>目前涉及的短信验证码，请走高速通道。</p>
+<h5 id="4-3-2-模板消息通知"><a href="#4-3-2-模板消息通知" class="headerlink" title="4.3.2 模板消息通知"></a>4.3.2 模板消息通知</h5><p>研究生在申请入驻时，审核通过、审核不通过均有对应模板消息进行通知。</p>
+<blockquote>
+<ul>
+<li><p>通知场景：云私塾研究生之家</p>
+<p>微信公众号平台对应账号为：<a href="mailto:koolearnyssxz@gmail.com" target="_blank" rel="noopener">koolearnyssxz@gmail.com</a></p>
+</li>
+<li><p>审核通过模板消息：</p>
+<ul>
+<li>模板ID：</li>
+<li>消息内容：</li>
+<li>模板跳转：</li>
+</ul>
+</li>
+<li>审核不通过模板消息<ul>
+<li>模板ID：</li>
+<li>消息内容</li>
+</ul>
+</li>
+<li>补充资料审核通过：<ul>
+<li>模板ID：</li>
+<li>消息内容：</li>
+<li>模板跳转：</li>
+</ul>
+</li>
+<li>补充资料审核不通过：<ul>
+<li>模板ID：</li>
+<li>消息内容：</li>
+<li>模板跳转：</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/09/07/院校库数据扒取需求详情/" data-toggle="tooltip" data-placement="top"
+                           title="">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/11/09/云私塾项目结构说明及预算/" data-toggle="tooltip" data-placement="top"
+                           title="云私塾项目结构说明及预算">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#云私塾-研究生端需求说明文档"><span class="toc-text">云私塾-研究生端需求说明文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、研究生端产品概述"><span class="toc-text">一、研究生端产品概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相关角色"><span class="toc-text">2. 相关角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-角色权限"><span class="toc-text">3.角色权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-产品目标"><span class="toc-text">4. 产品目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、研究生端产品结构"><span class="toc-text">二、研究生端产品结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-功能框架结构图"><span class="toc-text">1. 功能框架结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据定义及说明"><span class="toc-text">2. 数据定义及说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-主要业务流程"><span class="toc-text">3. 主要业务流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-页面原型"><span class="toc-text">4. 页面原型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、研究生端"><span class="toc-text">三、研究生端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-研究生入驻申请"><span class="toc-text">1. 研究生入驻申请</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-研究生申请入驻信息结构图"><span class="toc-text">1.1 研究生申请入驻信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-研究生申请入驻流程图"><span class="toc-text">1.3 研究生申请入驻流程图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-页面逻辑"><span class="toc-text">1.4 页面逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1注册引导页"><span class="toc-text">1.4.1注册引导页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-注册页"><span class="toc-text">1.4.2 注册页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-3-注册完成页"><span class="toc-text">1.4.3 注册完成页</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-数据需求"><span class="toc-text">1.5 数据需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-用户访问场景"><span class="toc-text">1.6 用户访问场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-研究生-个人主页"><span class="toc-text">2. 研究生-个人主页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-个人主页信息结构图"><span class="toc-text">2.1 个人主页信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-个人主页页面结构"><span class="toc-text">2.2 个人主页页面结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-页面原型"><span class="toc-text">2.3 页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-我的主页：W1"><span class="toc-text">2.3.1 我的主页：W1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-我的主页：W2"><span class="toc-text">2.3.2 我的主页：W2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-我的主页：W3"><span class="toc-text">2.3.3 我的主页：W3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-4-我的主页：W4"><span class="toc-text">2.3.4 我的主页：W4</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-研究生管理后台"><span class="toc-text">3. 研究生管理后台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-研究生管理后台信息结构图"><span class="toc-text">3.1 研究生管理后台信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-后端页面原型"><span class="toc-text">3.2 后端页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-1-研究生入驻审核"><span class="toc-text">3.2.1 研究生入驻审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-2-研究生补充资料审核"><span class="toc-text">3.2.2 研究生补充资料审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-3-研究生管理"><span class="toc-text">3.2.3 研究生管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-研究生数据统计表"><span class="toc-text">3.2.4  研究生数据统计表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-其他需求"><span class="toc-text">4. 其他需求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-性能需求"><span class="toc-text">4.1 性能需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-兼容性需求"><span class="toc-text">4.2 兼容性需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-消息通知需求"><span class="toc-text">4.3 消息通知需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-短信验证码"><span class="toc-text">4.3.1 短信验证码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-模板消息通知"><span class="toc-text">4.3.2 模板消息通知</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#云私塾"
+                           title="云私塾">云私塾</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ehazon">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/megahertz">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/haojen">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; ￠微笑的鱼… 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://weixiaodeyu.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://s1.ax1x.com/2018/09/07/iCcPtH.jpg">
+</body>
+
+</html>
