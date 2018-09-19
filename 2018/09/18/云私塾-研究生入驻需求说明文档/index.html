@@ -209,12 +209,12 @@
 </table>
 <p>页面原型地址如下：<a href="https://weixiaodeyu.github.io/yunsishu/">https://weixiaodeyu.github.io/yunsishu/</a></p>
 <hr>
-<h2 id="一、研究生端产品概述"><a href="#一、研究生端产品概述" class="headerlink" title="一、研究生端产品概述"></a>一、研究生端产品概述</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>根据项目产品规划，将项目产品区分为三个模块：考生端、研究生端、真题库，目前新东方不缺前端流量，只是我们没有办法提供相应的供给，所有优先开发供给端——研究生端。</p>
+<h2 id="一、研究生端产品概述"><a href="#一、研究生端产品概述" class="headerlink" title="一、研究生端产品概述"></a>一、研究生端产品概述</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>根据项目产品规划，将项目产品区分为三个模块：考生端、研究生端、真题库，目前新东方不缺前端流量，只是我们没有办法提供相应的供给，所以优先开发供给端——研究生端。</p>
 <blockquote>
 <ul>
 <li>前端系统：<ul>
-<li>研究生申请入驻（H5）-3个页面；</li>
-<li>研究生个人主页（H5）-1个页面；</li>
+<li>研究生申请入驻（H5）</li>
+<li>研究生个人主页（H5）</li>
 </ul>
 </li>
 <li>后端系统：<ul>
@@ -546,7 +546,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="1-4-页面逻辑"><a href="#1-4-页面逻辑" class="headerlink" title="1.4 页面逻辑"></a>1.4 页面逻辑</h4><p>==注册流程分为三个部分：注册页引导页、注册页、注册完成页，详情如下。==</p>
+<h4 id="1-4-页面逻辑"><a href="#1-4-页面逻辑" class="headerlink" title="1.4 页面逻辑"></a>1.4 页面逻辑</h4><p><strong>注册流程分为三个部分：注册页引导页、注册页、注册完成页，详情如下。</strong></p>
 <h5 id="1-4-1注册引导页"><a href="#1-4-1注册引导页" class="headerlink" title="1.4.1注册引导页"></a>1.4.1注册引导页</h5><p><strong>用途</strong>：此页的主要目的是让用户通过引导图的说明，清晰明了的知道我们是做什么的？入驻后能获得什么？快速建立用户认知。</p>
 <p>页面分为两部分：1个底页，三张可滑动的图片。</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv4jdit9x0j31w81187wh.jpg" alt="">        </p>
@@ -557,16 +557,31 @@
 <ul>
 <li>图片不支持循环滚动；</li>
 <li>滑动到最后一页继续往左滑动，自动进入注册页；</li>
+<li>不进行图片操作，点击“立即入驻”仍可以直接进入注册页；</li>
 </ul>
 </blockquote>
 <h5 id="1-4-2-注册页"><a href="#1-4-2-注册页" class="headerlink" title="1.4.2 注册页"></a>1.4.2 注册页</h5><p><strong>用途</strong>：此页主要用于研究生用户填写读研相关信息，完成信息的自动化录入，并通过系统审核后，成为系统内的合格研究生，向考生提供相关考研辅导。</p>
-<p><strong>页面Damon：</strong></p>
+<p><strong>页面Damon：</strong>具体交互请查看原型图的用例说明。</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8y6z8asuj30ku10atah.jpg" alt=""></p>
 <blockquote>
 <p>该页面主要为了获取研究生用户有效信息。具体需求如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv93f8icipj31ax14ytcn.jpg" alt=""></p>
 <ul>
-<li>在入驻信息的选择处：地区-院校-专业，按照父级关系逐级选择；</li>
+<li>在入驻信息的选择处：地区-院校-专业，按照父级关系逐级选择；<ul>
+<li>地区选择：点击院校所属省份后的输入框，调出以下页面；<ul>
+<li><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvew0n4mzgj30gv0frt93.jpg" alt=""></li>
+</ul>
+</li>
+<li>院校选择：选择省份后，院校选择下面自动下拉调出以下页面（再次点击院校选择后的输入框可重新调出选择页）；<ul>
+<li><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvew1tm84bj30h20otdgh.jpg" alt=""></li>
+</ul>
+</li>
+<li>专业选择：选择院校后，自动打开专业选择（点击专业选择后面的输入框，也可以调出以下页面）；<ul>
+<li><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvew2r7ne6j30gv0fdwep.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>证件上传：<ul>
 <li>限制最多上传5张照片；</li>
 <li>文件类型：支持PNG、JPG等常见图片格式，点击上传，调取手机相册或拍照；</li>
@@ -583,11 +598,11 @@
 <h5 id="1-4-3-注册完成页"><a href="#1-4-3-注册完成页" class="headerlink" title="1.4.3 注册完成页"></a>1.4.3 注册完成页</h5><p>该页面，主要引导用户在注册后进入其个人主页，先行熟悉系统，并趁着用户的热情还在，引导用户提交更多的资料信息。</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv5fq0c1ffj30ku112q3h.jpg" alt=""></p>
 <blockquote>
-<p>需求详情：该页面，点击“我的主页”跳转“个人主页”；</p>
+<p>需求详情：该页面，点击“我的主页”跳转“个人主页”，<strong>默认打开“我的入驻信息”页面</strong>；</p>
 <ul>
 <li>此处因“录取方式”不同，进入个人主页后，页面内容不同；<ul>
-<li>第一志愿录取：进入个人主页-页面W3；</li>
-<li>调剂录取：进入个人主页-页面W4；</li>
+<li>第一志愿录取：进入个人主页-页面W1-1；</li>
+<li>调剂录取：进入个人主页-页面W1-2；</li>
 </ul>
 </li>
 </ul>
@@ -621,8 +636,8 @@
 <hr>
 <h3 id="2-研究生-个人主页"><a href="#2-研究生-个人主页" class="headerlink" title="2. 研究生-个人主页"></a>2. 研究生-个人主页</h3><h4 id="2-1-个人主页信息结构图"><a href="#2-1-个人主页信息结构图" class="headerlink" title="2.1 个人主页信息结构图"></a>2.1 个人主页信息结构图</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcebcwz2ej31dk1um45o.jpg" alt=""></p>
 <h4 id="2-2-个人主页页面结构"><a href="#2-2-个人主页页面结构" class="headerlink" title="2.2 个人主页页面结构"></a>2.2 个人主页页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcjcszc70j30n40fsaah.jpg" alt=""></p>
-<h4 id="2-3-页面原型"><a href="#2-3-页面原型" class="headerlink" title="2.3 页面原型"></a>2.3 页面原型</h4><p>页面的原型图地址为：</p>
-<h5 id="2-3-1-我的主页：W1"><a href="#2-3-1-我的主页：W1" class="headerlink" title="2.3.1 我的主页：W1"></a>2.3.1 我的主页：W1</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcf1nwgqqj30ku0lfdh5.jpg" alt=""></p>
+<h4 id="2-3-页面原型"><a href="#2-3-页面原型" class="headerlink" title="2.3 页面原型"></a>2.3 页面原型</h4><h5 id="2-3-1-我的主页：W1"><a href="#2-3-1-我的主页：W1" class="headerlink" title="2.3.1 我的主页：W1"></a>2.3.1 我的主页：W1</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvewvon7enj30ku142dhw.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvewv0p88tj30l41gatbd.jpg" alt=""></p>
 <blockquote>
 <p>页面需求详情：</p>
 <ul>
@@ -630,11 +645,11 @@
 </li>
 <li><p>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取）；</p>
 <ul>
-<li>“我的入驻信息”页面——第一志愿录取页面：信息项同W1</li>
+<li>“我的入驻信息”页面——第一志愿录取页面：信息项同W1的用例展示</li>
 </ul>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj381n51j30dt0f2weq.jpg" alt=""></p>
 <ul>
-<li>“我的入驻信息”页面——调剂录取页面：信息项同W2</li>
+<li>“我的入驻信息”页面——调剂录取页面：信息项同W2的用例展示</li>
 </ul>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj3fzc5tj30ag0g2q37.jpg" alt=""></p>
 </li>
@@ -648,23 +663,16 @@
 <p>需求详情：</p>
 <ul>
 <li>页面前置条件：用户已完成入驻认证，且认证状态为“审核不通过”；</li>
-<li>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取），详情同2.3.1；</li>
+<li>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取），页面详情同2.3.1；</li>
 </ul>
 </blockquote>
-<h5 id="2-3-3-我的主页：W3"><a href="#2-3-3-我的主页：W3" class="headerlink" title="2.3.3 我的主页：W3"></a>2.3.3 我的主页：W3</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcfdppsujj30ku146jtl.jpg" alt=""></p>
+<h5 id="2-3-3-我的入驻信息页"><a href="#2-3-3-我的入驻信息页" class="headerlink" title="2.3.3 我的入驻信息页"></a>2.3.3 我的入驻信息页</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvex1cneq8j30y60l43zj.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fveyqf1dcxj30y60uudh8.jpg" alt=""></p>
 <blockquote>
-<p>需求详情：</p>
+<p>修改规则：</p>
 <ul>
-<li>前置条件：用户通过“注册完成页”进入个人主页且“录取方式“为”第一志愿录取”；</li>
-<li>保存提交后：进入个人主页W1。</li>
-</ul>
-</blockquote>
-<h5 id="2-3-4-我的主页：W4"><a href="#2-3-4-我的主页：W4" class="headerlink" title="2.3.4 我的主页：W4"></a>2.3.4 我的主页：W4</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvchjpnsi2j30l41aogo1.jpg" alt=""></p>
-<blockquote>
-<p>需求详情：</p>
-<ul>
-<li>前置条件：用户通过“注册完成页”进入个人主页且“录取方式“为”调剂录取”；</li>
-<li>保存提交后：进入个人主页W1。</li>
+<li>入驻信息第一次填写后不可更改；</li>
+<li>自我介绍可以随时更改，提交后，后台待审核保留最新提交的数据即可；</li>
 </ul>
 </blockquote>
 <hr>
@@ -676,7 +684,7 @@
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcpcigz9uj30j607uaap.jpg" alt=""></p>
 <blockquote>
 <p>需求详情：</p>
-<p>排序：按照入驻时间倒叙排列，入驻时间最新的在第一条；</p>
+<p>排序：按照入驻时间倒叙排列，入驻时间最近的在第一条；</p>
 </blockquote>
 <ul>
 <li><p>审核页：</p>
@@ -828,6 +836,8 @@
 <ul>
 <li><p>模板ID：iWSD1cAPKjN70Q4j7anEdAyp8wOPNa9DidcBIc6gFMQ</p>
 </li>
+<li><p>模板跳转：个人主页</p>
+</li>
 <li><p>消息内容：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     同学您好，恭喜您成功入驻云私塾。</span><br><span class="line">&gt;     姓名：张三</span><br><span class="line">&gt;     专业：计算机</span><br><span class="line">&gt;     高校：北京邮电大学</span><br><span class="line">&gt;     审核通过时间：2018-05-14</span><br><span class="line">&gt;     点击访问个人主页，可以完善更多信息，其他通能也将在我的主页陆续上线，敬请期待！如有任何疑问清理联系客服维系:XXXX。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -837,12 +847,11 @@
 </blockquote>
 <blockquote>
 <ul>
-<li>模板跳转：个人主页</li>
-</ul>
-<ul>
 <li><p>审核不通过模板消息</p>
 <ul>
 <li><p>模板ID：sFiEBitkYBIklOWRgK5ukDk1IM7_yaAO6WNQ4A7oKS8</p>
+</li>
+<li><p>模板跳转：注册页（缓存用户入驻信息）</p>
 </li>
 <li><p>消息内容</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的入驻审核未通过，请查看下方原因，修正后重新提交。</span><br><span class="line">&gt;     注册审核状态：审核不通过</span><br><span class="line">&gt;     审核时间：2018年2月23日</span><br><span class="line">&gt;     审核备注：证件不完整，请提供完整的学生证、录取通知书等有效证件。</span><br><span class="line">&gt;     点击重新提交入驻信息。如有任何疑问请联系客服微信：XXXX。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -853,12 +862,11 @@
 </blockquote>
 <blockquote>
 <ul>
-<li>模板跳转：注册页（缓存用户入驻信息）</li>
-</ul>
-<ul>
 <li><p>补充资料审核通过：</p>
 <ul>
 <li><p>模板ID：imbsceJse76YNNR1aEZw7kFte1c-mc71ET8yBlkokeI</p>
+</li>
+<li><p>模板跳转：个人主页W1（W-1或W-2）</p>
 </li>
 <li><p>消息内容：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您修改的信息已经通过审核！</span><br><span class="line">&gt;     审核内容：个人主页补充资料</span><br><span class="line">&gt;     审核结果：审核通过</span><br><span class="line">&gt;     2014年7月21日</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -869,23 +877,17 @@
 </blockquote>
 <blockquote>
 <ul>
-<li>模板跳转：个人主页</li>
-</ul>
-<ul>
 <li><p>补充资料审核不通过：</p>
 <ul>
 <li><p>模板ID：imbsceJse76YNNR1aEZw7kFte1c-mc71ET8yBlkokeI</p>
+</li>
+<li><p>模板跳转：个人主页W1（W-1或W-2）</p>
 </li>
 <li><p>消息内容：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的申请已审核完毕！</span><br><span class="line">&gt;     审核内容：认证服务</span><br><span class="line">&gt;     审核结果：审核不通过</span><br><span class="line">&gt;     2014年7月21日</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>模板跳转：个人主页</li>
 </ul>
 </blockquote>
 
@@ -916,7 +918,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#云私塾-研究生端需求说明文档"><span class="toc-text">云私塾-研究生端需求说明文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、研究生端产品概述"><span class="toc-text">一、研究生端产品概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相关角色"><span class="toc-text">2. 相关角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-角色权限"><span class="toc-text">3.角色权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-产品目标"><span class="toc-text">4. 产品目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、研究生端产品结构"><span class="toc-text">二、研究生端产品结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-功能框架结构图"><span class="toc-text">1. 功能框架结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据定义及说明"><span class="toc-text">2. 数据定义及说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-主要业务流程"><span class="toc-text">3. 主要业务流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-页面原型"><span class="toc-text">4. 页面原型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、研究生端"><span class="toc-text">三、研究生端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-研究生入驻申请"><span class="toc-text">1. 研究生入驻申请</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-研究生申请入驻信息结构图"><span class="toc-text">1.1 研究生申请入驻信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-研究生申请入驻流程图"><span class="toc-text">1.3 研究生申请入驻流程图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-页面逻辑"><span class="toc-text">1.4 页面逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1注册引导页"><span class="toc-text">1.4.1注册引导页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-注册页"><span class="toc-text">1.4.2 注册页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-3-注册完成页"><span class="toc-text">1.4.3 注册完成页</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-数据需求"><span class="toc-text">1.5 数据需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-用户访问场景"><span class="toc-text">1.6 用户访问场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-研究生-个人主页"><span class="toc-text">2. 研究生-个人主页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-个人主页信息结构图"><span class="toc-text">2.1 个人主页信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-个人主页页面结构"><span class="toc-text">2.2 个人主页页面结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-页面原型"><span class="toc-text">2.3 页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-我的主页：W1"><span class="toc-text">2.3.1 我的主页：W1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-我的主页：W2"><span class="toc-text">2.3.2 我的主页：W2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-我的主页：W3"><span class="toc-text">2.3.3 我的主页：W3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-4-我的主页：W4"><span class="toc-text">2.3.4 我的主页：W4</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-研究生管理后台"><span class="toc-text">3. 研究生管理后台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-研究生管理后台信息结构图"><span class="toc-text">3.1 研究生管理后台信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-后端页面原型"><span class="toc-text">3.2 后端页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-1-研究生入驻审核"><span class="toc-text">3.2.1 研究生入驻审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-2-研究生补充资料审核"><span class="toc-text">3.2.2 研究生补充资料审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-3-研究生管理"><span class="toc-text">3.2.3 研究生管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-研究生数据统计表"><span class="toc-text">3.2.4  研究生数据统计表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-其他需求"><span class="toc-text">4. 其他需求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-性能需求"><span class="toc-text">4.1 性能需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-兼容性需求"><span class="toc-text">4.2 兼容性需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-消息通知需求"><span class="toc-text">4.3 消息通知需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-短信验证码"><span class="toc-text">4.3.1 短信验证码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-模板消息通知"><span class="toc-text">4.3.2 模板消息通知</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#云私塾-研究生端需求说明文档"><span class="toc-text">云私塾-研究生端需求说明文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、研究生端产品概述"><span class="toc-text">一、研究生端产品概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-概述"><span class="toc-text">1. 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相关角色"><span class="toc-text">2. 相关角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-角色权限"><span class="toc-text">3.角色权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-产品目标"><span class="toc-text">4. 产品目标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、研究生端产品结构"><span class="toc-text">二、研究生端产品结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-功能框架结构图"><span class="toc-text">1. 功能框架结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据定义及说明"><span class="toc-text">2. 数据定义及说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-主要业务流程"><span class="toc-text">3. 主要业务流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-页面原型"><span class="toc-text">4. 页面原型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、研究生端"><span class="toc-text">三、研究生端</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-研究生入驻申请"><span class="toc-text">1. 研究生入驻申请</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-研究生申请入驻信息结构图"><span class="toc-text">1.1 研究生申请入驻信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-研究生申请入驻流程图"><span class="toc-text">1.3 研究生申请入驻流程图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-页面逻辑"><span class="toc-text">1.4 页面逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1注册引导页"><span class="toc-text">1.4.1注册引导页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-注册页"><span class="toc-text">1.4.2 注册页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-3-注册完成页"><span class="toc-text">1.4.3 注册完成页</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-数据需求"><span class="toc-text">1.5 数据需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-用户访问场景"><span class="toc-text">1.6 用户访问场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-研究生-个人主页"><span class="toc-text">2. 研究生-个人主页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-个人主页信息结构图"><span class="toc-text">2.1 个人主页信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-个人主页页面结构"><span class="toc-text">2.2 个人主页页面结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-页面原型"><span class="toc-text">2.3 页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-我的主页：W1"><span class="toc-text">2.3.1 我的主页：W1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-我的主页：W2"><span class="toc-text">2.3.2 我的主页：W2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-我的入驻信息页"><span class="toc-text">2.3.3 我的入驻信息页</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-研究生管理后台"><span class="toc-text">3. 研究生管理后台</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-研究生管理后台信息结构图"><span class="toc-text">3.1 研究生管理后台信息结构图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-后端页面原型"><span class="toc-text">3.2 后端页面原型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-1-研究生入驻审核"><span class="toc-text">3.2.1 研究生入驻审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-2-研究生补充资料审核"><span class="toc-text">3.2.2 研究生补充资料审核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-3-研究生管理"><span class="toc-text">3.2.3 研究生管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-4-研究生数据统计表"><span class="toc-text">3.2.4  研究生数据统计表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-其他需求"><span class="toc-text">4. 其他需求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-性能需求"><span class="toc-text">4.1 性能需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-兼容性需求"><span class="toc-text">4.2 兼容性需求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-消息通知需求"><span class="toc-text">4.3 消息通知需求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-1-短信验证码"><span class="toc-text">4.3.1 短信验证码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-3-2-模板消息通知"><span class="toc-text">4.3.2 模板消息通知</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
