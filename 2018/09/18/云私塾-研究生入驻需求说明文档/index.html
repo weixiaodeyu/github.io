@@ -514,6 +514,14 @@
 <td>研究生个人主页、考生前端</td>
 <td>个人主页可修改、管理端可修改</td>
 </tr>
+<tr>
+<td style="text-align:center">24</td>
+<td style="text-align:center">审核人</td>
+<td style="text-align:center">后端管理人员身份，特指研究生入驻的审核人（补充资料审核不记录审核人）</td>
+<td>后端系统识别</td>
+<td>研究生管理页面</td>
+<td>不可修改</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
@@ -671,13 +679,20 @@
 <blockquote>
 <p>修改规则：</p>
 <ul>
-<li>入驻信息第一次填写后不可更改；</li>
+<li>入驻信息第一次填写后不可更改，保存前校验所有信息必须填写；</li>
 <li>自我介绍可以随时更改，提交后，后台待审核保留最新提交的数据即可；</li>
 </ul>
 </blockquote>
 <hr>
 <h3 id="3-研究生管理后台"><a href="#3-研究生管理后台" class="headerlink" title="3. 研究生管理后台"></a>3. 研究生管理后台</h3><h4 id="3-1-研究生管理后台信息结构图"><a href="#3-1-研究生管理后台信息结构图" class="headerlink" title="3.1 研究生管理后台信息结构图"></a>3.1 研究生管理后台信息结构图</h4><p>主要完成研究生入驻相关信息的审核，信息结构如下。</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvclz04vnsj31lw4es1bi.jpg" alt=""></p>
+<blockquote>
+<p>后端需求：</p>
+<ul>
+<li>后台保留每个管理员的所有操作日志，记录操作人、具体动作、操作日期，便于后期查证和管理；</li>
+<li>后端的所有研究生管理类表格数据，后台支持按照筛选条件导出为Excel；</li>
+</ul>
+</blockquote>
 <h4 id="3-2-后端页面原型"><a href="#3-2-后端页面原型" class="headerlink" title="3.2 后端页面原型"></a>3.2 后端页面原型</h4><h5 id="3-2-1-研究生入驻审核"><a href="#3-2-1-研究生入驻审核" class="headerlink" title="3.2.1 研究生入驻审核"></a>3.2.1 研究生入驻审核</h5><ul>
 <li>入驻待审核列表：</li>
 </ul>
@@ -703,28 +718,41 @@
 <h5 id="3-2-2-研究生补充资料审核"><a href="#3-2-2-研究生补充资料审核" class="headerlink" title="3.2.2 研究生补充资料审核"></a>3.2.2 研究生补充资料审核</h5><ul>
 <li><p>补充资料审核列表：<img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg1b0ajgj30na0alq42.jpg" alt=""></p>
 <blockquote>
-<p>根据研究生认证状态不同，下方分为三个表格，默认显示待审核状态对应的表格：</p>
+<p>此处主要审核研究生提交的补充资料，根据研究生认证状态不同，分为三个表格，默认显示待审核状态对应的表格：</p>
 <p>1.待审核：刚入驻，还未审核；</p>
 <p>2.认证通过：已完成入驻认证；</p>
 <p>3.认证未通过：完成入驻，但审核未通过；</p>
-<p>备注：认证状态为“禁用”的用户，不可修改自己的主页，所以这里不做考虑；</p>
+<p>备注：</p>
+<ul>
+<li>认证状态为“禁用”的用户，不可修改自己的主页，所以这里不做考虑；</li>
+<li>如用户在提交补充资料后，后台还未审核的时候重新提交补充资料审核，则自动覆盖上一条待审核状态。</li>
+</ul>
 </blockquote>
 </li>
 <li><p>补充资料审核详情页面：区分录取方式“第一志愿”对应页面B1和“调剂录取”对应页面B2；</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg7szojrj31nl19itbh.jpg" alt=""></p>
 </li>
 </ul>
-<h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>​    <img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdgavzxssj30ra0g1dgl.jpg" alt=""></p>
+<h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>页面工程：该页面显示研究生入驻审核界面审核过的研究生数据，分为审核通过、审核不通过。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg456at3xj30sx0co74r.jpg" alt=""></p>
 <blockquote>
-<p>该页面分为三个状态：全部、认证通过、审核未通过，作为筛选tab.</p>
+<p>该页面分为三个状态：全部、认证通过、审核未通过、禁用，作为筛选tab.</p>
 <p>​    1.全部：含认证状态为待审核、认证通过、审核未通过、禁用</p>
 <p>​    2.认证通过：完成入驻且认证通过</p>
 <p>​    3.审核未通过：完成入驻但审核未通过</p>
+<p>​    4.禁用：已审核（含通过和未通过）用户被禁用；</p>
+<p>​    表格样式如下：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg4op2q7fj30sk051q31.jpg" alt=""></p>
 <p>汇总数据：</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdggbcxclj30kz04taa3.jpg" alt=""></p>
-<p>​    从数据库计算对应数据，并返回在这里，每日固定时间刷新；</p>
-<p>搜索：</p>
-<p>​    1.支持联动搜索和独立搜索；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg476dv90j30lc0bd0t4.jpg" alt=""></p>
+<p>​      从数据库计算对应数据，并返回在这里，刷新页面是更新；</p>
+<pre><code>1. 共计完成研究生入驻总人数：全部tab下的所有人数；
+2. 覆盖院校：这些研究生共计分布在多少个学校；
+3. 认证通过：认证通过人数；
+4. 审核不通过：审核不通过人数；
+5. 禁用：禁用人数；
+</code></pre><p>搜索：</p>
+<p>​    1.支持独立搜索和多字段联动搜索；</p>
 <p>​    2.入驻时间，支持时间选择；</p>
 </blockquote>
 <h5 id="3-2-4-研究生数据统计表"><a href="#3-2-4-研究生数据统计表" class="headerlink" title="3.2.4  研究生数据统计表"></a>3.2.4  研究生数据统计表</h5><p>该表，用来统计各大高校、各类状态研究生入驻的情况，便于市场调整入驻激励措施及推进方向。对应字段定义如下：</p>
@@ -825,7 +853,7 @@
 </table>
 <h4 id="4-2-兼容性需求"><a href="#4-2-兼容性需求" class="headerlink" title="4.2 兼容性需求"></a>4.2 兼容性需求</h4><p>IOS端：支持iOS 7.0、 8.0、 9.0、 10.0，与ipad、iphone、itouch兼容</p>
 <p>Android：兼容安卓5.0版本及以上版本</p>
-<h4 id="4-3-消息通知需求"><a href="#4-3-消息通知需求" class="headerlink" title="4.3 消息通知需求"></a>4.3 消息通知需求</h4><h5 id="4-3-1-短信验证码"><a href="#4-3-1-短信验证码" class="headerlink" title="4.3.1 短信验证码"></a>4.3.1 短信验证码</h5><p>目前涉及的短信验证码，请走高速通道。</p>
+<h4 id="4-3-消息通知需求"><a href="#4-3-消息通知需求" class="headerlink" title="4.3 消息通知需求"></a>4.3 消息通知需求</h4><h5 id="4-3-1-短信验证码"><a href="#4-3-1-短信验证码" class="headerlink" title="4.3.1 短信验证码"></a>4.3.1 短信验证码</h5><p>目前涉及的短信验证码，为高频即时性需求，请走高速通道。</p>
 <h5 id="4-3-2-模板消息通知"><a href="#4-3-2-模板消息通知" class="headerlink" title="4.3.2 模板消息通知"></a>4.3.2 模板消息通知</h5><p>研究生在申请入驻时，审核通过、审核不通过均有对应模板消息进行通知。</p>
 <blockquote>
 <ul>
@@ -854,7 +882,7 @@
 <li><p>模板跳转：注册页（缓存用户入驻信息）</p>
 </li>
 <li><p>消息内容</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的入驻审核未通过，请查看下方原因，修正后重新提交。</span><br><span class="line">&gt;     注册审核状态：审核不通过</span><br><span class="line">&gt;     审核时间：2018年2月23日</span><br><span class="line">&gt;     审核备注：证件不完整，请提供完整的学生证、录取通知书等有效证件。</span><br><span class="line">&gt;     点击重新提交入驻信息。如有任何疑问请联系客服微信：XXXX。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的入驻审核未通过，原因如下，请修正后重新提交。</span><br><span class="line">&gt;     注册审核状态：审核不通过</span><br><span class="line">&gt;     审核时间：2018年2月23日</span><br><span class="line">&gt;     审核备注：抓取后台审核意见详情</span><br><span class="line">&gt;     请按要求修正后重新提交。如有任何疑问请联系客服微信：XXXX。</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -884,7 +912,7 @@
 <li><p>模板跳转：个人主页W1（W-1或W-2）</p>
 </li>
 <li><p>消息内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的申请已审核完毕！</span><br><span class="line">&gt;     审核内容：认证服务</span><br><span class="line">&gt;     审核结果：审核不通过</span><br><span class="line">&gt;     2014年7月21日</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;     您好，您的申请已审核完毕！</span><br><span class="line">&gt;     审核内容：个人主页补充资料</span><br><span class="line">&gt;     审核结果：审核不通过</span><br><span class="line">&gt;     抓取审核意见。</span><br><span class="line">&gt;     2014年7月21日</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
