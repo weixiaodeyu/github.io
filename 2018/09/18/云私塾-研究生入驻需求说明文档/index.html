@@ -317,7 +317,7 @@
 </table>
 <h3 id="4-产品目标"><a href="#4-产品目标" class="headerlink" title="4. 产品目标"></a>4. 产品目标</h3><p>初步完成云私塾系统中，<strong>研究生申请入驻、个人信息管理、审核查询</strong>等基础功能的闭环，保证研究生能够高校快捷的进入到云私塾系统，完成云私塾研究生储备和管理。</p>
 <hr>
-<h2 id="二、研究生端产品结构"><a href="#二、研究生端产品结构" class="headerlink" title="二、研究生端产品结构"></a>二、研究生端产品结构</h2><h3 id="1-功能框架结构图"><a href="#1-功能框架结构图" class="headerlink" title="1. 功能框架结构图"></a>1. 功能框架结构图</h3><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fv8twz4yluj31s75lmtza.jpg" alt=""></p>
+<h2 id="二、研究生端产品结构"><a href="#二、研究生端产品结构" class="headerlink" title="二、研究生端产品结构"></a>二、研究生端产品结构</h2><h3 id="1-功能框架结构图"><a href="#1-功能框架结构图" class="headerlink" title="1. 功能框架结构图"></a>1. 功能框架结构图</h3><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvgzgm0a7cj31qa5rq1kx.jpg" alt=""></p>
 <h3 id="2-数据定义及说明"><a href="#2-数据定义及说明" class="headerlink" title="2. 数据定义及说明"></a>2. 数据定义及说明</h3><table>
 <thead>
 <tr>
@@ -546,7 +546,7 @@
 <tbody>
 <tr>
 <td>功能描述</td>
-<td>通过授权获取用户以下信息：<br>微信头像、微信昵称、位置等其他微信开放信息</td>
+<td>通过授权获取用户以下信息：<br>微信头像、微信昵称、性别、位置等其他微信开放信息</td>
 </tr>
 <tr>
 <td>需求描述</td>
@@ -563,7 +563,7 @@
 <blockquote>
 <p>需求详情：</p>
 <ul>
-<li>图片不支持循环滚动；</li>
+<li>图片向左滑动，图片不支持循环滚动；</li>
 <li>滑动到最后一页继续往左滑动，自动进入注册页；</li>
 <li>不进行图片操作，点击“立即入驻”仍可以直接进入注册页；</li>
 </ul>
@@ -590,9 +590,15 @@
 </li>
 </ul>
 </li>
-<li>证件上传：<ul>
-<li>限制最多上传5张照片；</li>
-<li>文件类型：支持PNG、JPG等常见图片格式，点击上传，调取手机相册或拍照；</li>
+<li><p>证件上传：</p>
+<ul>
+<li><p>限制最多上传5张照片；</p>
+</li>
+<li><p>文件类型：支持PNG、JPG等常见图片格式；</p>
+</li>
+<li><p>点击上传，弹出提示语，点击“确定”后调取手机相册或拍照；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvgzuhbz8aj308c06cjr9.jpg" alt=""></p>
+</li>
 </ul>
 </li>
 <li>用户入驻后再次访问注册链接：<ul>
@@ -685,7 +691,7 @@
 </blockquote>
 <hr>
 <h3 id="3-研究生管理后台"><a href="#3-研究生管理后台" class="headerlink" title="3. 研究生管理后台"></a>3. 研究生管理后台</h3><h4 id="3-1-研究生管理后台信息结构图"><a href="#3-1-研究生管理后台信息结构图" class="headerlink" title="3.1 研究生管理后台信息结构图"></a>3.1 研究生管理后台信息结构图</h4><p>主要完成研究生入驻相关信息的审核，信息结构如下。</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvclz04vnsj31lw4es1bi.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvgzxmqe1sj31sz3t47k2.jpg" alt=""></p>
 <blockquote>
 <p>后端需求：</p>
 <ul>
@@ -730,7 +736,7 @@
 </blockquote>
 </li>
 <li><p>补充资料审核详情页面：区分录取方式“第一志愿”对应页面B1和“调剂录取”对应页面B2；</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg7szojrj31nl19itbh.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvh06hswkgj31nl19iwh9.jpg" alt=""></p>
 </li>
 </ul>
 <h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>页面工程：该页面显示研究生入驻审核界面审核过的研究生数据，分为审核通过、审核不通过。</p>
@@ -739,13 +745,13 @@
 <p>该页面分为三个状态：全部、认证通过、审核未通过、禁用，作为筛选tab.</p>
 <p>​    1.全部：含认证状态为待审核、认证通过、审核未通过、禁用</p>
 <p>​    2.认证通过：完成入驻且认证通过</p>
-<p>​    3.审核未通过：完成入驻但审核未通过</p>
+<p>​    3.审核未通过：完成入驻但审核未通过（如用户重新提交注册数据，则状态变更为待审核）</p>
 <p>​    4.禁用：已审核（含通过和未通过）用户被禁用；</p>
 <p>​    表格样式如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg4op2q7fj30sk051q31.jpg" alt=""></p>
 <p>汇总数据：</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg476dv90j30lc0bd0t4.jpg" alt=""></p>
-<p>​      从数据库计算对应数据，并返回在这里，刷新页面是更新；</p>
+<p>​      从数据库计算对应数据，并返回在这里，刷新页面时更新；</p>
 <pre><code>1. 共计完成研究生入驻总人数：全部tab下的所有人数；
 2. 覆盖院校：这些研究生共计分布在多少个学校；
 3. 认证通过：认证通过人数；
