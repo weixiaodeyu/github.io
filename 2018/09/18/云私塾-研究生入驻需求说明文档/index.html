@@ -501,7 +501,7 @@
 <tr>
 <td style="text-align:center">22</td>
 <td style="text-align:center">认证状态</td>
-<td style="text-align:center">审核未通过（认证未通过）、认证通过、待审核、禁用</td>
+<td style="text-align:center">认证未通过、认证通过、待认证、禁用、补充资料审核通过、补充资料审核未通过</td>
 <td>后端规则设定</td>
 <td>研究生个人主页、后台</td>
 <td>管理端可修改</td>
@@ -655,7 +655,7 @@
 <blockquote>
 <p>页面需求详情：</p>
 <ul>
-<li><p>页面前置条件：用户已完成入驻申请，且认证状态为“认证通过”或“待审核”；</p>
+<li><p>页面前置条件：用户已完成入驻申请，证状态为“认证通过”、“认证未通过“、”待审核”均可访问；</p>
 </li>
 <li><p>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取）；</p>
 <ul>
@@ -676,7 +676,7 @@
 <blockquote>
 <p>需求详情：</p>
 <ul>
-<li>页面前置条件：用户已完成入驻认证，且认证状态为“审核不通过”；</li>
+<li>页面前置条件：用户已完成入驻认证，且认证状态为“认证未通过”；</li>
 <li>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取），页面详情同2.3.1；</li>
 </ul>
 </blockquote>
@@ -685,8 +685,8 @@
 <blockquote>
 <p>修改规则：</p>
 <ul>
-<li>入驻信息第一次填写后不可更改，保存前校验所有信息必须填写；</li>
-<li>自我介绍可以随时更改，提交后，后台待审核保留最新提交的数据即可；</li>
+<li>我的入驻信息第一次填写后不可更改，第一次保存提交前校验所有信息必须填写，如未提交，则缓存已输入的内容；</li>
+<li>该页面，仅有自我介绍可以随时更改，提交后，后台待审核保留最新提交的数据即可；</li>
 </ul>
 </blockquote>
 <hr>
@@ -702,15 +702,16 @@
 <h4 id="3-2-后端页面原型"><a href="#3-2-后端页面原型" class="headerlink" title="3.2 后端页面原型"></a>3.2 后端页面原型</h4><h5 id="3-2-1-研究生入驻审核"><a href="#3-2-1-研究生入驻审核" class="headerlink" title="3.2.1 研究生入驻审核"></a>3.2.1 研究生入驻审核</h5><ul>
 <li>入驻待审核列表：</li>
 </ul>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcpcigz9uj30j607uaap.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn10le8hjj30t60vbdgo.jpg" alt=""></p>
 <blockquote>
 <p>需求详情：</p>
-<p>排序：按照入驻时间倒叙排列，入驻时间最近的在第一条；</p>
+<p>右上角：待认证处返回当前页面列表总人数；</p>
+<p>排序：按照入驻时间倒序排列，入驻时间最近的在第一条；</p>
 </blockquote>
 <ul>
 <li><p>审核页：</p>
 <p>所有数据来源于用户前端注册数据及对应的微信数据，由服务器返回。</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcpjryttjj30r80sat9g.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn11sk5ikj30r80sa751.jpg" alt=""></p>
 </li>
 </ul>
 <blockquote>
@@ -718,44 +719,65 @@
 <ul>
 <li>研究生ID：从Y00001默认连续生成；</li>
 <li>有效证件和头像：图片点击可放大；</li>
+<li>审核结果：认证通过、认证未通过</li>
 <li>审核意见：根据审核结果调用内置选项（运营提供），同时支持手动输入；</li>
 </ul>
 </blockquote>
 <h5 id="3-2-2-研究生补充资料审核"><a href="#3-2-2-研究生补充资料审核" class="headerlink" title="3.2.2 研究生补充资料审核"></a>3.2.2 研究生补充资料审核</h5><ul>
-<li><p>补充资料审核列表：<img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdg1b0ajgj30na0alq42.jpg" alt=""></p>
+<li><p>补充资料审核列表（仅保存有补充资料待审核的状态），仅有审核功能。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn12uk7woj30th0vbt9p.jpg" alt=""></p>
 <blockquote>
 <p>此处主要审核研究生提交的补充资料，根据研究生认证状态不同，分为三个表格，默认显示待审核状态对应的表格：</p>
-<p>1.待审核：刚入驻，还未审核；</p>
+<p>1.待认证：刚完成入驻申请，管理员还未完成入驻审核；</p>
 <p>2.认证通过：已完成入驻认证；</p>
-<p>3.认证未通过：完成入驻，但审核未通过；</p>
+<p>3.认证未通过：完成入驻，但入驻认证未通过；</p>
+<p>4.审核操作为（不影响入驻审核状态）：</p>
+<p>​    补充资料审核通过：新信息覆盖旧信息；</p>
+<p>​    补充资料审核未通过：驳回，保留原始信息；</p>
 <p>备注：</p>
 <ul>
 <li>认证状态为“禁用”的用户，不可修改自己的主页，所以这里不做考虑；</li>
-<li>如用户在提交补充资料后，后台还未审核的时候重新提交补充资料审核，则自动覆盖上一条待审核状态。</li>
+<li>如用户在提交补充资料后，后台还未审核的时候重新提交补充资料审核，则自动覆盖上一条待审核内容，保留最新内容。</li>
 </ul>
 </blockquote>
 </li>
 <li><p>补充资料审核详情页面：区分录取方式“第一志愿”对应页面B1和“调剂录取”对应页面B2；</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvh06hswkgj31nl19iwh9.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn0jhrqg2j31nl19iq5q.jpg" alt=""></p>
+<blockquote>
+<p>操作：</p>
+<p>​    补充资料审核通过：数据库更新其修改的数据；</p>
+<p>​    补充资料审核未通过：数据库不更新数据，并驳回；</p>
+</blockquote>
 </li>
 </ul>
-<h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>页面工程：该页面显示研究生入驻审核界面审核过的研究生数据，分为审核通过、审核不通过。</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg456at3xj30sx0co74r.jpg" alt=""></p>
+<h5 id="3-2-3-研究生管理"><a href="#3-2-3-研究生管理" class="headerlink" title="3.2.3 研究生管理"></a>3.2.3 研究生管理</h5><p>页面功能：该页面显示研究生入驻审核界面审核过的研究生数据，分为审核通过、审核不通过。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn16tu5saj30rj0f9js5.jpg" alt=""></p>
 <blockquote>
-<p>该页面分为三个状态：全部、认证通过、审核未通过、禁用，作为筛选tab.</p>
-<p>​    1.全部：含认证状态为待审核、认证通过、审核未通过、禁用</p>
+<p>该页面分为三个状态：全部、认证通过、认证未通过、禁用（忽略补充资料审核状态），作为筛选tab.</p>
+<p>​    1.全部：含认证状态为待审核、认证通过、认证未通过、禁用</p>
 <p>​    2.认证通过：完成入驻且认证通过</p>
-<p>​    3.审核未通过：完成入驻但审核未通过（如用户重新提交注册数据，则状态变更为待审核）</p>
-<p>​    4.禁用：已审核（含通过和未通过）用户被禁用；</p>
-<p>​    表格样式如下：</p>
+<p>​    3.认证未通过：入驻认证未通过（仅认证状态，不含补充资料审核状态）</p>
+<p>​    4.禁用：账户禁用；</p>
+<p>表格样式如下：</p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg4op2q7fj30sk051q31.jpg" alt=""></p>
+<p>详情页面可修改用户状态：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn1lzszd7j31nl1aaacu.jpg" alt=""></p>
+<p>状态变更：</p>
+<ul>
+<li>认证通过：将认证状态修改为认证通过，该状态时，研究生在学生端可见；</li>
+<li>认证未通过：将认证状态修改为认证未通过，该状态时，研究生在学生端不可见；</li>
+<li>禁用：将用户状态修改为禁用，该状态时，研究生在学生端不可见，且不可访问研究生端详情；</li>
+</ul>
+<p>备注：以上状态修改，均不影响补充资料审核的状态及结果。</p>
+</blockquote>
+<blockquote>
 <p>汇总数据：</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvg476dv90j30lc0bd0t4.jpg" alt=""></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn1cwgn9sj30mm08f0sw.jpg" alt=""></p>
 <p>​      从数据库计算对应数据，并返回在这里，刷新页面时更新；</p>
 <pre><code>1. 共计完成研究生入驻总人数：全部tab下的所有人数；
 2. 覆盖院校：这些研究生共计分布在多少个学校；
 3. 认证通过：认证通过人数；
-4. 审核不通过：审核不通过人数；
+4. 认证未通过：认证未通过人数；
 5. 禁用：禁用人数；
 </code></pre><p>搜索：</p>
 <p>​    1.支持独立搜索和多字段联动搜索；</p>
