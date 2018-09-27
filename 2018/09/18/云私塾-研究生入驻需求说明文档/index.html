@@ -209,6 +209,13 @@
 </table>
 <p>页面原型地址如下：<a href="https://weixiaodeyu.github.io/yunsishu/">https://weixiaodeyu.github.io/yunsishu/</a></p>
 <hr>
+<p>文档修正（2018-9-27）：</p>
+<ol>
+<li><p>3.2.2 研究生补充资料审核部分，重新整理了补充资料的审核逻辑：</p>
+<p>​    概要：认证通过用户的补充资料正常审核；认证未通过的用户不可修改补充资料；待审核用户由运营端先进行入驻审核，再完成对应的补充资料审核。</p>
+</li>
+</ol>
+<hr>
 <h2 id="一、研究生端产品概述"><a href="#一、研究生端产品概述" class="headerlink" title="一、研究生端产品概述"></a>一、研究生端产品概述</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>根据项目产品规划，将项目产品区分为三个模块：考生端、研究生端、真题库，目前新东方不缺前端流量，只是我们没有办法提供相应的供给，所以优先开发供给端——研究生端。</p>
 <blockquote>
 <ul>
@@ -650,7 +657,8 @@
 <hr>
 <h3 id="2-研究生-个人主页"><a href="#2-研究生-个人主页" class="headerlink" title="2. 研究生-个人主页"></a>2. 研究生-个人主页</h3><h4 id="2-1-个人主页信息结构图"><a href="#2-1-个人主页信息结构图" class="headerlink" title="2.1 个人主页信息结构图"></a>2.1 个人主页信息结构图</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcebcwz2ej31dk1um45o.jpg" alt=""></p>
 <h4 id="2-2-个人主页页面结构"><a href="#2-2-个人主页页面结构" class="headerlink" title="2.2 个人主页页面结构"></a>2.2 个人主页页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvezwp0s8yj30n40fs0t6.jpg" alt=""></p>
-<h4 id="2-3-页面原型"><a href="#2-3-页面原型" class="headerlink" title="2.3 页面原型"></a>2.3 页面原型</h4><h5 id="2-3-1-我的主页：W1"><a href="#2-3-1-我的主页：W1" class="headerlink" title="2.3.1 我的主页：W1"></a>2.3.1 我的主页：W1</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvewvon7enj30ku142dhw.jpg" alt=""></p>
+<h4 id="2-3-页面原型"><a href="#2-3-页面原型" class="headerlink" title="2.3 页面原型"></a>2.3 页面原型</h4><h5 id="2-3-1-我的主页：W1"><a href="#2-3-1-我的主页：W1" class="headerlink" title="2.3.1 我的主页：W1"></a>2.3.1 我的主页：W1</h5><p>该页面支持全页上滑动，用户输入时，唤起键盘后，自动将输入光标置于用户键盘上方。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvo9vaceslj30ku142jti.jpg" alt=""></p>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvewv0p88tj30l41gatbd.jpg" alt=""></p>
 <blockquote>
 <p>页面需求详情：</p>
@@ -659,6 +667,7 @@
 </li>
 <li><p>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取）；</p>
 <ul>
+<li>页面访问权限：仅待认证、认证通过用户可访问；</li>
 <li>“我的入驻信息”页面——第一志愿录取页面：信息项同W1的用例展示</li>
 </ul>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj381n51j30dt0f2weq.jpg" alt=""></p>
@@ -672,12 +681,12 @@
 </ul>
 <p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvcj49j9oxj30ab09kt8l.jpg" alt=""></p>
 </blockquote>
-<h5 id="2-3-2-我的主页：W2"><a href="#2-3-2-我的主页：W2" class="headerlink" title="2.3.2 我的主页：W2"></a>2.3.2 我的主页：W2</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvdjk118ynj30kt0nd3zv.jpg" alt=""></p>
+<h5 id="2-3-2-我的主页：W2"><a href="#2-3-2-我的主页：W2" class="headerlink" title="2.3.2 我的主页：W2"></a>2.3.2 我的主页：W2</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvo9xijkb1j30kt0lfwfr.jpg" alt=""></p>
 <blockquote>
 <p>需求详情：</p>
 <ul>
 <li>页面前置条件：用户已完成入驻认证，且认证状态为“认证未通过”；</li>
-<li>“我的入驻信息”进入信息补充页面（区分第一志愿录取及调剂录取），页面详情同2.3.1；</li>
+<li>与“W1”不同处：该页面隐藏”我的入驻信息”菜单，显示“重新入驻菜单”，重新入驻菜单点击后进入“注册页”。</li>
 </ul>
 </blockquote>
 <h5 id="2-3-3-我的入驻信息页"><a href="#2-3-3-我的入驻信息页" class="headerlink" title="2.3.3 我的入驻信息页"></a>2.3.3 我的入驻信息页</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvex1cneq8j30y60l43zj.jpg" alt=""></p>
@@ -724,19 +733,23 @@
 </ul>
 </blockquote>
 <h5 id="3-2-2-研究生补充资料审核"><a href="#3-2-2-研究生补充资料审核" class="headerlink" title="3.2.2 研究生补充资料审核"></a>3.2.2 研究生补充资料审核</h5><ul>
-<li><p>补充资料审核列表（仅保存有补充资料待审核的状态），仅有审核功能。</p>
-<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvn12uk7woj30th0vbt9p.jpg" alt=""></p>
+<li><p>补充资料审核列表</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvo70mvgqxj30ry0f93z8.jpg" alt=""></p>
 <blockquote>
-<p>此处主要审核研究生提交的补充资料，根据研究生认证状态不同，分为三个表格，默认显示待审核状态对应的表格：</p>
+<p>该页面仅显示补充资料修改后，需要审核的信息条目，一旦审核操作完成，后台界面不保留审核记录，但在服务器保留审核日志（什么时间，谁审核的，审核结果），在有需要的时候可查即可。</p>
+</blockquote>
+<p>审核逻辑：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fvo9e3eavtj30vy09q3z2.jpg" alt=""></p>
+<blockquote>
+<p>此处主要审核研究生提交的补充资料，根据研究生认证状态不同，分为两个表格，默认显示待认证状态对应的表格：</p>
 <p>1.待认证：刚完成入驻申请，管理员还未完成入驻审核；</p>
 <p>2.认证通过：已完成入驻认证；</p>
-<p>3.认证未通过：完成入驻，但入驻认证未通过；</p>
-<p>4.审核操作为（不影响入驻审核状态）：</p>
+<p>3.审核操作为（不影响入驻审核状态）：</p>
 <p>​    补充资料审核通过：新信息覆盖旧信息；</p>
 <p>​    补充资料审核未通过：驳回，保留原始信息；</p>
 <p>备注：</p>
 <ul>
-<li>认证状态为“禁用”的用户，不可修改自己的主页，所以这里不做考虑；</li>
+<li>认证状态为“禁用”、”审核未通过“的用户，不可修改自己的主页，所以这里不做考虑；</li>
 <li>如用户在提交补充资料后，后台还未审核的时候重新提交补充资料审核，则自动覆盖上一条待审核内容，保留最新内容。</li>
 </ul>
 </blockquote>
