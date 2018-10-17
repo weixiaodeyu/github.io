@@ -154,7 +154,14 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fvn1lzszd7j31nl1aaacu.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fvn1cwgn9sj30mm08f0sw.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fvdhg22uocj30n908e0tb.jpg">
-<meta property="og:updated_time" content="2018-10-12T08:49:36.689Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwbabp0dtoj30nu03zjrp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9rae7zmj30t20abdg3.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9h17g19j30u20530st.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9f4c6bkj30sq066q30.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9g5nqalj30t30cc74u.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9jr5kevj30c402sq2r.jpg">
+<meta property="og:image" content="c:/Users/furong/AppData/Roaming/Typora/typora-user-images/1539763517324.png">
+<meta property="og:updated_time" content="2018-10-17T08:16:44.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="云私塾-研究生入驻产品需求文档说明书">
 <meta name="twitter:description" content="云私塾第二版分步开发需求文档——研究生入驻管理">
@@ -395,7 +402,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-10-12 16:49:36" itemprop="dateModified" datetime="2018-10-12T16:49:36+08:00">2018-10-12</time>
+                <time title="修改时间：2018-10-17 16:16:44" itemprop="dateModified" datetime="2018-10-17T16:16:44+08:00">2018-10-17</time>
               
             
           </span>
@@ -1256,6 +1263,52 @@
 </li>
 </ul>
 </blockquote>
+<h2 id="五、测试结果"><a href="#五、测试结果" class="headerlink" title="五、测试结果"></a>五、测试结果</h2><h4 id="1-前端小瑕疵"><a href="#1-前端小瑕疵" class="headerlink" title="1. 前端小瑕疵"></a>1. 前端小瑕疵</h4><ol>
+<li><p>注册页院校选择部分：地区、院校等选择界面，上划动动作，与底层页面上划分离不明显，容易同时划动底层页面；</p>
+</li>
+<li><p>注册页图片上传部分：上传速度较慢，请问是否可以优化。点击上传后，页面静默大概3-5秒，才能完成图片上传，或者是否可以增加一个上传的过程，比如图片上面有个上传的进度圈？</p>
+</li>
+<li><p>个人主页，认证状态：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwbabp0dtoj30nu03zjrp.jpg" alt=""></p>
+<p>此处指的是入驻审核的认证状态，感谢。</p>
+</li>
+</ol>
+<h4 id="2-管理后台"><a href="#2-管理后台" class="headerlink" title="2. 管理后台"></a>2. 管理后台</h4><h5 id="2-1-研究生数据统计模块"><a href="#2-1-研究生数据统计模块" class="headerlink" title="2.1 研究生数据统计模块"></a>2.1 研究生数据统计模块</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9rae7zmj30t20abdg3.jpg" alt=""></p>
+<blockquote>
+<p>数据定义：</p>
+<ol>
+<li>覆盖专业数量：指的是前一列对应状态的研究生人数所覆盖的专业数量；该页面所有统计数据，不计算认证未通过的人数。</li>
+</ol>
+<p>小需求：</p>
+<ol>
+<li>是否可以将前两行的总计数据，与下方的各分校的数据列进行对齐？ 前两行好像多了一列？</li>
+<li>该页面请协助添加数据导出为EXCEL的功能，感谢！</li>
+</ol>
+</blockquote>
+<h5 id="2-2-研究生管理"><a href="#2-2-研究生管理" class="headerlink" title="2.2 研究生管理"></a>2.2 研究生管理</h5><ol>
+<li><p>详情页面无法访问，点击后空白；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9h17g19j30u20530st.jpg" alt=""></p>
+</li>
+<li><p>请将表格字段“审核”修改为“认证状态”；</p>
+<p>对应的认证状态为：认证通过、认证不通过、待认证、禁用</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9f4c6bkj30sq066q30.jpg" alt=""></p>
+</li>
+<li><p>“禁用”条件的筛选结果不正确，录取方式筛选好像也不准（不知道是不是因为在测试环境的原因）；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9g5nqalj30t30cc74u.jpg" alt=""></p>
+</li>
+<li><p>需求：院校和专业筛选，是否可以支持模糊搜索（输入关键词自动给出匹配结果列表，可以选择）</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwb9jr5kevj30c402sq2r.jpg" alt=""></p>
+</li>
+</ol>
+<h5 id="2-3-补充资料审核"><a href="#2-3-补充资料审核" class="headerlink" title="2.3 补充资料审核"></a>2.3 补充资料审核</h5><ol>
+<li><p>补充资料审核部分，有字段冗余，请协助查验。</p>
+<p><img src="C:/Users/furong/AppData/Roaming/Typora/typora-user-images/1539763517324.png" alt="1539763517324"></p>
+</li>
+</ol>
+<h5 id="2-3-其他"><a href="#2-3-其他" class="headerlink" title="2.3 其他"></a>2.3 其他</h5><ol>
+<li>后台管理列表的序号：指的是当前页自然排序的序号，便于看出当前页的数据个数，非固定参数；</li>
+<li>入驻审核通过、补充资料审核通过这两个口，建议是否可以和审核驳回一样，弹出对应的消息框，支持预置和手动输入；</li>
+</ol>
 
       
     </div>
@@ -1432,7 +1485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#云私塾-研究生端需求说明文档"><span class="nav-text">云私塾-研究生端需求说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文档更新概要"><span class="nav-text">文档更新概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文档更新（2018-09-29）-文档编号yss-yz-2。"><span class="nav-text">2. 文档更新（2018-09-29）,文档编号yss-yz-2。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-用例评审后文档更新（2018-09-28），文档编号yss-yz-1。"><span class="nav-text">1.用例评审后文档更新（2018-09-28），文档编号yss-yz-1。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、研究生端产品概述"><span class="nav-text">一、研究生端产品概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-相关角色"><span class="nav-text">2. 相关角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-角色权限"><span class="nav-text">3.角色权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-产品目标"><span class="nav-text">4. 产品目标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、研究生端产品结构"><span class="nav-text">二、研究生端产品结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-功能框架结构图"><span class="nav-text">1. 功能框架结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据定义及说明"><span class="nav-text">2. 数据定义及说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-主要业务流程"><span class="nav-text">3. 主要业务流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-页面原型"><span class="nav-text">4. 页面原型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、研究生端"><span class="nav-text">三、研究生端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-研究生入驻申请"><span class="nav-text">1. 研究生入驻申请</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-研究生申请入驻信息结构图"><span class="nav-text">1.1 研究生申请入驻信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-研究生申请入驻流程图"><span class="nav-text">1.3 研究生申请入驻流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-页面逻辑"><span class="nav-text">1.4 页面逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-1注册引导页"><span class="nav-text">1.4.1注册引导页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-2-注册页"><span class="nav-text">1.4.2 注册页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-3-注册完成页"><span class="nav-text">1.4.3 注册完成页</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-数据需求"><span class="nav-text">1.5 数据需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-用户访问场景"><span class="nav-text">1.6 用户访问场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-研究生-个人主页"><span class="nav-text">2. 研究生-个人主页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-个人主页信息结构图"><span class="nav-text">2.1 个人主页信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-个人主页页面结构"><span class="nav-text">2.2 个人主页页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-页面原型"><span class="nav-text">2.3 页面原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-我的主页：W1-待认证、认证通过"><span class="nav-text">2.3.1 我的主页：W1 待认证、认证通过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-2-我的主页：W2-认证未通过"><span class="nav-text">2.3.2 我的主页：W2  认证未通过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-3-我的入驻信息页"><span class="nav-text">2.3.3 我的入驻信息页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-研究生管理后台"><span class="nav-text">3. 研究生管理后台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-研究生管理后台信息结构图"><span class="nav-text">3.1 研究生管理后台信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-后端页面原型"><span class="nav-text">3.2 后端页面原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-1-研究生入驻审核"><span class="nav-text">3.2.1 研究生入驻审核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-2-研究生补充资料审核"><span class="nav-text">3.2.2 研究生补充资料审核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-3-研究生管理"><span class="nav-text">3.2.3 研究生管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-4-研究生数据统计表"><span class="nav-text">3.2.4  研究生数据统计表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-其他需求"><span class="nav-text">4. 其他需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-性能需求"><span class="nav-text">4.1 性能需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-兼容性需求"><span class="nav-text">4.2 兼容性需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-消息通知需求"><span class="nav-text">4.3 消息通知需求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-1-短信验证码"><span class="nav-text">4.3.1 短信验证码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-2-模板消息通知"><span class="nav-text">4.3.2 模板消息通知</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#云私塾-研究生端需求说明文档"><span class="nav-text">云私塾-研究生端需求说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文档更新概要"><span class="nav-text">文档更新概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-文档更新（2018-09-29）-文档编号yss-yz-2。"><span class="nav-text">2. 文档更新（2018-09-29）,文档编号yss-yz-2。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-用例评审后文档更新（2018-09-28），文档编号yss-yz-1。"><span class="nav-text">1.用例评审后文档更新（2018-09-28），文档编号yss-yz-1。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、研究生端产品概述"><span class="nav-text">一、研究生端产品概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-相关角色"><span class="nav-text">2. 相关角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-角色权限"><span class="nav-text">3.角色权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-产品目标"><span class="nav-text">4. 产品目标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、研究生端产品结构"><span class="nav-text">二、研究生端产品结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-功能框架结构图"><span class="nav-text">1. 功能框架结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据定义及说明"><span class="nav-text">2. 数据定义及说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-主要业务流程"><span class="nav-text">3. 主要业务流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-页面原型"><span class="nav-text">4. 页面原型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、研究生端"><span class="nav-text">三、研究生端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-研究生入驻申请"><span class="nav-text">1. 研究生入驻申请</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-研究生申请入驻信息结构图"><span class="nav-text">1.1 研究生申请入驻信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-研究生申请入驻流程图"><span class="nav-text">1.3 研究生申请入驻流程图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-页面逻辑"><span class="nav-text">1.4 页面逻辑</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-1注册引导页"><span class="nav-text">1.4.1注册引导页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-2-注册页"><span class="nav-text">1.4.2 注册页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-3-注册完成页"><span class="nav-text">1.4.3 注册完成页</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-5-数据需求"><span class="nav-text">1.5 数据需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-6-用户访问场景"><span class="nav-text">1.6 用户访问场景</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-研究生-个人主页"><span class="nav-text">2. 研究生-个人主页</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-个人主页信息结构图"><span class="nav-text">2.1 个人主页信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-个人主页页面结构"><span class="nav-text">2.2 个人主页页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-页面原型"><span class="nav-text">2.3 页面原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-我的主页：W1-待认证、认证通过"><span class="nav-text">2.3.1 我的主页：W1 待认证、认证通过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-2-我的主页：W2-认证未通过"><span class="nav-text">2.3.2 我的主页：W2  认证未通过</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-3-我的入驻信息页"><span class="nav-text">2.3.3 我的入驻信息页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-研究生管理后台"><span class="nav-text">3. 研究生管理后台</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-研究生管理后台信息结构图"><span class="nav-text">3.1 研究生管理后台信息结构图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-后端页面原型"><span class="nav-text">3.2 后端页面原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-1-研究生入驻审核"><span class="nav-text">3.2.1 研究生入驻审核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-2-研究生补充资料审核"><span class="nav-text">3.2.2 研究生补充资料审核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-3-研究生管理"><span class="nav-text">3.2.3 研究生管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-4-研究生数据统计表"><span class="nav-text">3.2.4  研究生数据统计表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-其他需求"><span class="nav-text">4. 其他需求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-性能需求"><span class="nav-text">4.1 性能需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-兼容性需求"><span class="nav-text">4.2 兼容性需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-消息通知需求"><span class="nav-text">4.3 消息通知需求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-1-短信验证码"><span class="nav-text">4.3.1 短信验证码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-2-模板消息通知"><span class="nav-text">4.3.2 模板消息通知</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、测试结果"><span class="nav-text">五、测试结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-前端小瑕疵"><span class="nav-text">1. 前端小瑕疵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-管理后台"><span class="nav-text">2. 管理后台</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-研究生数据统计模块"><span class="nav-text">2.1 研究生数据统计模块</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-研究生管理"><span class="nav-text">2.2 研究生管理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-补充资料审核"><span class="nav-text">2.3 补充资料审核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-其他"><span class="nav-text">2.3 其他</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
