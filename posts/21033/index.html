@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="云私塾二期，第二部分，研究生问答相关需求文档及说明。">
+<meta name="keywords" content="问答系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云私塾 - 研究生问答系统需求说明文档">
+<meta property="og:url" content="http://weixiaodeyu.github.io/posts/21033/index.html">
+<meta property="og:site_name" content="￠微笑的鱼…">
+<meta property="og:description" content="云私塾二期，第二部分，研究生问答相关需求文档及说明。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhxmaln6dj34dg16ewlq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhy4rrju7j31v01ea43q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhzbdf78pj30ku155adw.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhz59xbb7j30ku15b0wr.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhzf1lt66j310y15qq7q.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi08suvqkj30am01f3yd.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi09qljejj30ku02gweq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0bq359fj30ku0940su.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0dz5h39j30jl025mx4.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0fpft8nj30b50adgmh.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0llw1myj31he0mqwhy.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0m1hcttj30ku14sjtp.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0nj9b6gj30ku02g3yj.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0obcuttj30gf0933z5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0tazb5lj30g906x3yx.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0w9woulj30g108pq37.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi191vdqsj30gv07wt8l.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi19bk9lnj30gv07wglh.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi1hpl8pjj30gv08umx1.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi1japau7j30gv07wdfq.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi4trwkpaj316z0lgwg7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi4y1qlc2j31ax16p40u.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi54suu4nj309r07tmx4.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi54sumf2j30a604lmx0.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6b8nt8dj30xq0ce0tn.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6829u1sj31nr16bdmh.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6v1jhfsj30ld0bcjru.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6ydkxi6j30h603c3yd.jpg">
+<meta property="og:updated_time" content="2018-10-23T08:57:51.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="云私塾 - 研究生问答系统需求说明文档">
+<meta name="twitter:description" content="云私塾二期，第二部分，研究生问答相关需求文档及说明。">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwhxmaln6dj34dg16ewlq.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://weixiaodeyu.github.io/posts/21033/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>云私塾 - 研究生问答系统需求说明文档 | ￠微笑的鱼…</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">￠微笑的鱼…</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于我</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://weixiaodeyu.github.io/posts/21033/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="￠微笑的鱼…">
+      <meta itemprop="description" content="用产品思维做运营，用运营思维做产品">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fw4g098ehdj30tz0u0wkb.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="￠微笑的鱼…">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">云私塾 - 研究生问答系统需求说明文档
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-22 10:33:32" itemprop="dateCreated datePublished" datetime="2018-10-22T10:33:32+08:00">2018-10-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-10-23 16:57:51" itemprop="dateModified" datetime="2018-10-23T16:57:51+08:00">2018-10-23</time>
+              
+            
+          </span>
+
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">云私塾二期，第二部分，研究生问答相关需求文档及说明。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="云私塾-研究生问答系统需求说明文档"><a href="#云私塾-研究生问答系统需求说明文档" class="headerlink" title="云私塾 - 研究生问答系统需求说明文档"></a>云私塾 - 研究生问答系统需求说明文档</h1><p>文档说明：</p>
+<table>
+<thead>
+<tr>
+<th>文档版本号：</th>
+<th>2.1.0</th>
+<th>文档编号：yss-wd-1</th>
+<th>YSS_PRD_2_WD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>文档密级：</td>
+<td>内部文档</td>
+<td>归属部门/项目：</td>
+<td>国内考试事业部</td>
+</tr>
+<tr>
+<td>产品名：</td>
+<td>云私塾</td>
+<td>子系统名：</td>
+<td>研究生问答</td>
+</tr>
+<tr>
+<td>编写人：</td>
+<td>付荣</td>
+<td>编写日期：</td>
+<td>2018-10-22</td>
+</tr>
+</tbody>
+</table>
+<p>文档核心内容：主要描述了<strong>云私塾二期-研究生问答</strong>功能的开发需求。</p>
+<p>页面原型地址如下：</p>
+<a id="more"></a>
+<h2 id="一、产品概述"><a href="#一、产品概述" class="headerlink" title="一、产品概述"></a>一、产品概述</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>关于云私塾第二期项目，我们将考生-研究生的交互模块拆分为三个部分进行，研究生入驻系统、问答系统、资料检索系统。</p>
+<p>目前已完成研究生入驻系统部分的开发，该文档将对第二期-研究生问答部分的功能开发需求进行详细描述。</p>
+<blockquote>
+<ul>
+<li><p>前端系统：</p>
+<ul>
+<li>首页 A  （2个页面）</li>
+<li>登录绑定 B  （1个页面）</li>
+<li>搜索页 C（1个页面）</li>
+<li>最新问答 D（1个页面）</li>
+<li>专业主页 E  （3个页面，7种状态）</li>
+<li>研究生主页 F（3个页面）</li>
+<li>科目主页 G （3个页面）</li>
+<li>我的主页 H  （8个子页面） </li>
+</ul>
+</li>
+<li><p>后端系统：</p>
+<ul>
+<li>学员管理；</li>
+<li>问答管理；</li>
+<li>订单管理；</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="2-页面结构图"><a href="#2-页面结构图" class="headerlink" title="2. 页面结构图"></a>2. 页面结构图</h3><p>页面的整体结构见下图，虽然涉及页面较多，但主要功能单一，本次涉及信息录入的点攻击三处：</p>
+<blockquote>
+<p>信息录入:</p>
+<ol>
+<li>登录绑定；</li>
+<li>目标修改；</li>
+<li>问答；</li>
+</ol>
+<p>其他界面均为调用数据库已有数据进行展示。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwhxmaln6dj34dg16ewlq.jpg" alt=""></p>
+<h2 id="二、需求详情"><a href="#二、需求详情" class="headerlink" title="二、需求详情"></a>二、需求详情</h2><h3 id="1-首页-A"><a href="#1-首页-A" class="headerlink" title="1. 首页 A"></a>1. 首页 A</h3><p>首页可以直接访问，不强制用户完成授权和绑定。</p>
+<h4 id="1-1-首页的页面结构"><a href="#1-1-首页的页面结构" class="headerlink" title="1.1 首页的页面结构"></a>1.1 首页的页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwhy4rrju7j31v01ea43q.jpg" alt=""></p>
+<h4 id="1-2-页面原型"><a href="#1-2-页面原型" class="headerlink" title="1.2 页面原型"></a>1.2 页面原型</h4><h5 id="1-2-1-首页-未登录-页面A-1"><a href="#1-2-1-首页-未登录-页面A-1" class="headerlink" title="1.2.1 首页-未登录 页面A-1"></a>1.2.1 首页-未登录 页面A-1</h5><blockquote>
+<p>顶部菜单栏，显示“登录”。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwhzbdf78pj30ku155adw.jpg" alt=""></p>
+<h5 id="1-2-2-首页-已登录-页面A-2"><a href="#1-2-2-首页-已登录-页面A-2" class="headerlink" title="1.2.2 首页-已登录 页面A-2"></a>1.2.2 首页-已登录 页面A-2</h5><blockquote>
+<p>顶部菜单栏，显示“用户头像”。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwhz59xbb7j30ku15b0wr.jpg" alt=""></p>
+<h5 id="1-2-3-首页-菜单栏-页面A-3"><a href="#1-2-3-首页-菜单栏-页面A-3" class="headerlink" title="1.2.3 首页-菜单栏 页面A-3"></a>1.2.3 首页-菜单栏 页面A-3</h5><blockquote>
+<p>顶部菜菜单栏的展开状态</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwhzf1lt66j310y15qq7q.jpg" alt=""></p>
+<h4 id="1-3-页面需求详细说明"><a href="#1-3-页面需求详细说明" class="headerlink" title="1.3  页面需求详细说明"></a>1.3  页面需求详细说明</h4><h5 id="1-3-1-登录状态说明："><a href="#1-3-1-登录状态说明：" class="headerlink" title="1.3.1 登录状态说明："></a>1.3.1 登录状态说明：</h5><ul>
+<li><p>未登录</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi08suvqkj30am01f3yd.jpg" alt=""></p>
+</li>
+<li><p>已登录</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi09qljejj30ku02gweq.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="1-3-2-顶部轮播Banner说明"><a href="#1-3-2-顶部轮播Banner说明" class="headerlink" title="1.3.2 顶部轮播Banner说明"></a>1.3.2 顶部轮播Banner说明</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0bq359fj30ku0940su.jpg" alt=""></p>
+<ul>
+<li>预留五张图的位置，3s间隔，循环滚动，点击可跳转对应页面或图文；</li>
+<li>如图片数量不足五张，则显示实际张数；最少三张图片；</li>
+</ul>
+<h5 id="1-3-3-学长搜索"><a href="#1-3-3-学长搜索" class="headerlink" title="1.3.3 学长搜索"></a>1.3.3 学长搜索</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0dz5h39j30jl025mx4.jpg" alt=""></p>
+<ul>
+<li>搜索框内，刷新页面时计算库内研究生人数进行显示；</li>
+<li>点击搜索框后打开“搜索页 - 页面编号C ”；</li>
+</ul>
+<h5 id="1-3-4-学长列页"><a href="#1-3-4-学长列页" class="headerlink" title="1.3.4 学长列页"></a>1.3.4 学长列页</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0fpft8nj30b50adgmh.jpg" alt=""></p>
+<ul>
+<li>学长列表，优先抓取最近回答过问题的学长进行展示；</li>
+<li>每个研究生为的信息为一个版块，全区域可点，点击跳转“研究生主页 - 页面编号F ”</li>
+</ul>
+<h3 id="2-登录绑定-B"><a href="#2-登录绑定-B" class="headerlink" title="2. 登录绑定 B"></a>2. 登录绑定 B</h3><p>该页面完成用户微信与手机号的绑定，用户访问该页面时，拉取用户微信授权，生成学员ID。</p>
+<p><strong>该页面所有信息必填</strong></p>
+<h4 id="2-1-页面结构"><a href="#2-1-页面结构" class="headerlink" title="2.1 页面结构"></a>2.1 页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0llw1myj31he0mqwhy.jpg" alt=""></p>
+<h4 id="2-2-页面原型"><a href="#2-2-页面原型" class="headerlink" title="2.2 页面原型"></a>2.2 页面原型</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0m1hcttj30ku14sjtp.jpg" alt=""></p>
+<h4 id="2-3-页面需求详细说明"><a href="#2-3-页面需求详细说明" class="headerlink" title="2.3 页面需求详细说明"></a>2.3 页面需求详细说明</h4><h5 id="2-3-1-顶部菜单栏"><a href="#2-3-1-顶部菜单栏" class="headerlink" title="2.3.1 顶部菜单栏"></a>2.3.1 顶部菜单栏</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0nj9b6gj30ku02g3yj.jpg" alt=""></p>
+<ul>
+<li>顶部菜单栏不再显示头像和登录按钮；</li>
+</ul>
+<h5 id="2-3-2-头像及用户ID"><a href="#2-3-2-头像及用户ID" class="headerlink" title="2.3.2 头像及用户ID"></a>2.3.2 头像及用户ID</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0obcuttj30gf0933z5.jpg" alt=""></p>
+<ul>
+<li>用户授权：进入该页面时拉取用户授权，获取用户头像、性别、昵称等微信公开信息；</li>
+<li>分配学员ID：用户授权后生成唯一学员身份ID与微信绑定，该绑定与手机号是否绑定无关，授权后即获取唯一学员ID；</li>
+</ul>
+<h5 id="2-3-3-目标院校填写"><a href="#2-3-3-目标院校填写" class="headerlink" title="2.3.3 目标院校填写"></a>2.3.3 目标院校填写</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0tazb5lj30g906x3yx.jpg" alt=""></p>
+<ul>
+<li>目标院校的选择规则，与研究生入驻的选择规则相同。</li>
+<li>选择路径：选择省份-选择学校-选择专业（专业学位和学士学位）；</li>
+<li>计划报考年份：预置为2020.2021.2022；</li>
+</ul>
+<h5 id="2-3-4-手机号绑定"><a href="#2-3-4-手机号绑定" class="headerlink" title="2.3.4 手机号绑定"></a>2.3.4 手机号绑定</h5><p>该部分进行微信与手机号的绑定。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi0w9woulj30g108pq37.jpg" alt=""></p>
+<ul>
+<li><p>校验手机号的正确性；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi191vdqsj30gv07wt8l.jpg" alt=""></p>
+</li>
+<li><p>校验验证码的正确性；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi19bk9lnj30gv07wglh.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="2-3-5-完成绑定"><a href="#2-3-5-完成绑定" class="headerlink" title="2.3.5 完成绑定"></a>2.3.5 完成绑定</h5><ol>
+<li><p>空值检测：提交时检测是否有未填项，并进行提示；</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi1hpl8pjj30gv08umx1.jpg" alt=""></p>
+</li>
+<li><p>绑定成功提示：</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi1japau7j30gv07wdfq.jpg" alt=""></p>
+<ul>
+<li>该弹窗1秒后，页面刷新跳转到首页；</li>
+<li>点击“回到首页”自动跳转首页；</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-搜索页-C"><a href="#3-搜索页-C" class="headerlink" title="3. 搜索页 C"></a>3. 搜索页 C</h3><p>该页面，主要引导用户通过“ 学校 - 专业 ”来检索研究生，输出结果为专业主页；</p>
+<h4 id="3-1-页面结构"><a href="#3-1-页面结构" class="headerlink" title="3.1 页面结构"></a>3.1 页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi4trwkpaj316z0lgwg7.jpg" alt=""></p>
+<h4 id="3-2-页面原型"><a href="#3-2-页面原型" class="headerlink" title="3.2 页面原型"></a>3.2 页面原型</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi4y1qlc2j31ax16p40u.jpg" alt=""></p>
+<h4 id="3-3-页面需求详细说明"><a href="#3-3-页面需求详细说明" class="headerlink" title="3.3 页面需求详细说明"></a>3.3 页面需求详细说明</h4><h5 id="3-3-1-院校检索"><a href="#3-3-1-院校检索" class="headerlink" title="3.3.1 院校检索"></a>3.3.1 院校检索</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi54suu4nj309r07tmx4.jpg" alt=""></p>
+<ul>
+<li>目标院校的选择规则，与研究生入驻的选择规则相同。</li>
+<li>选择路径：选择省份-选择学校-选择专业（专业学位和学士学位）；</li>
+<li>点击“确定”后进入对应的专业主页；</li>
+</ul>
+<h5 id="3-3-2-检索记录"><a href="#3-3-2-检索记录" class="headerlink" title="3.3.2 检索记录"></a>3.3.2 检索记录</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi54sumf2j30a604lmx0.jpg" alt=""></p>
+<ul>
+<li>页面底部，显示检索记录，方便用户快捷跳转和切换，最多显示5条。</li>
+</ul>
+<h3 id="4-最新问答-D"><a href="#4-最新问答-D" class="headerlink" title="4. 最新问答 D"></a>4. 最新问答 D</h3><p>该页面按照时间倒叙显示最新产生的问答数据。</p>
+<h4 id="4-1-页面结构"><a href="#4-1-页面结构" class="headerlink" title="4.1 页面结构"></a>4.1 页面结构</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6b8nt8dj30xq0ce0tn.jpg" alt=""></p>
+<h4 id="4-2-页面原型"><a href="#4-2-页面原型" class="headerlink" title="4.2 页面原型"></a>4.2 页面原型</h4><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6829u1sj31nr16bdmh.jpg" alt=""></p>
+<h4 id="4-3-页面需求详情"><a href="#4-3-页面需求详情" class="headerlink" title="4.3 页面需求详情"></a>4.3 页面需求详情</h4><h6 id="4-3-1-问答内容"><a href="#4-3-1-问答内容" class="headerlink" title="4.3.1 问答内容"></a>4.3.1 问答内容</h6><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6v1jhfsj30ld0bcjru.jpg" alt=""></p>
+<ul>
+<li>问题：<ul>
+<li>提问者头像；</li>
+<li>提问者昵称</li>
+<li>提问时间；</li>
+<li>问题内容；</li>
+</ul>
+</li>
+<li>回答：<ul>
+<li>回答者头像</li>
+<li>回答者昵称；</li>
+<li>回答时间；</li>
+<li>回答内容；</li>
+<li>院校及专业标识（显示固定长度，超出部分省略）</li>
+</ul>
+</li>
+<li>立即提问：点击后，进入研究生主页；</li>
+</ul>
+<h5 id="4-3-2-页面底部"><a href="#4-3-2-页面底部" class="headerlink" title="4.3.2 页面底部"></a>4.3.2 页面底部</h5><p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwi6ydkxi6j30h603c3yd.jpg" alt=""></p>
+<ul>
+<li>页面底部，始终顶层显示”立即找学长“按钮；</li>
+<li>页面信息上划时，显示正在加载的状态；</li>
+<li>如该页面已加载所有信息，用户上划时，提示“已加载全部”；</li>
+</ul>
+<h3 id="5-专业主页-E"><a href="#5-专业主页-E" class="headerlink" title="5. 专业主页  E"></a>5. 专业主页  E</h3>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/问答系统/" rel="tag"># 问答系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/52512/" rel="next" title="问答业务的业务流程">
+                <i class="fa fa-chevron-left"></i> 问答业务的业务流程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/23557/" rel="prev" title="云私塾 - 关于带参二维码的配置需求">
+                云私塾 - 关于带参二维码的配置需求 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/005ywUQoly1fw4g098ehdj30tz0u0wkb.jpg"
+                alt="￠微笑的鱼…" />
+            
+              <p class="site-author-name" itemprop="name">￠微笑的鱼…</p>
+              <p class="site-description motion-element" itemprop="description">用产品思维做运营，用运营思维做产品</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#云私塾-研究生问答系统需求说明文档"><span class="nav-text">云私塾 - 研究生问答系统需求说明文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、产品概述"><span class="nav-text">一、产品概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-页面结构图"><span class="nav-text">2. 页面结构图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、需求详情"><span class="nav-text">二、需求详情</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-首页-A"><span class="nav-text">1. 首页 A</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-首页的页面结构"><span class="nav-text">1.1 首页的页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-页面原型"><span class="nav-text">1.2 页面原型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-1-首页-未登录-页面A-1"><span class="nav-text">1.2.1 首页-未登录 页面A-1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-2-首页-已登录-页面A-2"><span class="nav-text">1.2.2 首页-已登录 页面A-2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-3-首页-菜单栏-页面A-3"><span class="nav-text">1.2.3 首页-菜单栏 页面A-3</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-页面需求详细说明"><span class="nav-text">1.3  页面需求详细说明</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-1-登录状态说明："><span class="nav-text">1.3.1 登录状态说明：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-2-顶部轮播Banner说明"><span class="nav-text">1.3.2 顶部轮播Banner说明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-3-学长搜索"><span class="nav-text">1.3.3 学长搜索</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-4-学长列页"><span class="nav-text">1.3.4 学长列页</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-登录绑定-B"><span class="nav-text">2. 登录绑定 B</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-页面结构"><span class="nav-text">2.1 页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-页面原型"><span class="nav-text">2.2 页面原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-页面需求详细说明"><span class="nav-text">2.3 页面需求详细说明</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-1-顶部菜单栏"><span class="nav-text">2.3.1 顶部菜单栏</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-2-头像及用户ID"><span class="nav-text">2.3.2 头像及用户ID</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-3-目标院校填写"><span class="nav-text">2.3.3 目标院校填写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-4-手机号绑定"><span class="nav-text">2.3.4 手机号绑定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-5-完成绑定"><span class="nav-text">2.3.5 完成绑定</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-搜索页-C"><span class="nav-text">3. 搜索页 C</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-页面结构"><span class="nav-text">3.1 页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-页面原型"><span class="nav-text">3.2 页面原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-页面需求详细说明"><span class="nav-text">3.3 页面需求详细说明</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-1-院校检索"><span class="nav-text">3.3.1 院校检索</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-2-检索记录"><span class="nav-text">3.3.2 检索记录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-最新问答-D"><span class="nav-text">4. 最新问答 D</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-页面结构"><span class="nav-text">4.1 页面结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-页面原型"><span class="nav-text">4.2 页面原型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-页面需求详情"><span class="nav-text">4.3 页面需求详情</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#4-3-1-问答内容"><span class="nav-text">4.3.1 问答内容</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-3-2-页面底部"><span class="nav-text">4.3.2 页面底部</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-专业主页-E"><span class="nav-text">5. 专业主页  E</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">￠微笑的鱼…</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
