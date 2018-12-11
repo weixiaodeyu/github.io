@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.2" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.2" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="云私塾一、背景1、专业课市场的典型特点非统考自命题专业课市场，因专业课产品供给的多样性，而需求具有极强的分散性，一直以来都没能形成规模化的运营模式：  专业课产品供给的多样性：  研招单位共计842所，合计约50000个硕士招生专业； 每个专业均对应不同的考试内容、需求不同的学长学姐； 独立的考试科目为29896个，每个考试科目对应其考试真题，每年均有变动；  用户需求的分散性：  每年200余万">
+<meta name="keywords" content="项目介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云私塾项目框架简述">
+<meta property="og:url" content="http://weixiaodeyu.github.io/posts/50043/index.html">
+<meta property="og:site_name" content="￠微笑的鱼…">
+<meta property="og:description" content="云私塾一、背景1、专业课市场的典型特点非统考自命题专业课市场，因专业课产品供给的多样性，而需求具有极强的分散性，一直以来都没能形成规模化的运营模式：  专业课产品供给的多样性：  研招单位共计842所，合计约50000个硕士招生专业； 每个专业均对应不同的考试内容、需求不同的学长学姐； 独立的考试科目为29896个，每个考试科目对应其考试真题，每年均有变动；  用户需求的分散性：  每年200余万">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwyjyqq77wj32rx3lk1h5.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwybcw46h5j33b713ik33.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwylwaiitsj31oj1bcn1t.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwyehnx5roj31o22knwim.jpg">
+<meta property="og:updated_time" content="2018-11-09T07:31:39.709Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="云私塾项目框架简述">
+<meta name="twitter:description" content="云私塾一、背景1、专业课市场的典型特点非统考自命题专业课市场，因专业课产品供给的多样性，而需求具有极强的分散性，一直以来都没能形成规模化的运营模式：  专业课产品供给的多样性：  研招单位共计842所，合计约50000个硕士招生专业； 每个专业均对应不同的考试内容、需求不同的学长学姐； 独立的考试科目为29896个，每个考试科目对应其考试真题，每年均有变动；  用户需求的分散性：  每年200余万">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fwyjyqq77wj32rx3lk1h5.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://weixiaodeyu.github.io/posts/50043/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>云私塾项目框架简述 | ￠微笑的鱼…</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">￠微笑的鱼…</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于我</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://weixiaodeyu.github.io/posts/50043/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="￠微笑的鱼…">
+      <meta itemprop="description" content="用产品思维做运营，用运营思维做产品">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/005ywUQoly1fw4g098ehdj30tz0u0wkb.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="￠微笑的鱼…">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">云私塾项目框架简述
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-06 19:33:32" itemprop="dateCreated datePublished" datetime="2018-11-06T19:33:32+08:00">2018-11-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-09 15:31:39" itemprop="dateModified" datetime="2018-11-09T15:31:39+08:00">2018-11-09</time>
+              
+            
+          </span>
+
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="云私塾"><a href="#云私塾" class="headerlink" title="云私塾"></a>云私塾</h1><h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><h2 id="1、专业课市场的典型特点"><a href="#1、专业课市场的典型特点" class="headerlink" title="1、专业课市场的典型特点"></a>1、专业课市场的典型特点</h2><p>非统考自命题专业课市场，因<strong>专业课产品供给的多样性，而需求具有极强的分散性</strong>，一直以来都没能形成规模化的运营模式：</p>
+<blockquote>
+<p><strong>专业课产品供给的多样性：</strong></p>
+<ul>
+<li>研招单位共计842所，合计约50000个硕士招生专业；</li>
+<li>每个专业均对应不同的考试内容、需求不同的学长学姐；</li>
+<li>独立的考试科目为29896个，每个考试科目对应其考试真题，每年均有变动；</li>
+</ul>
+<p><strong>用户需求的分散性：</strong></p>
+<ul>
+<li>每年200余万考生的需求分散在45061个专业中，无法精确获知每个用户的需求倾向以及付费意向，需要大量的供给端服务储备，才能快速满足考生的需求；</li>
+<li>每个商品细分下后可以匹配到的用户数范围大概在1-100人之间（有的专业每年只招1个人，有的专业较大，会招生几十人），每个专业了理论上都存在市场需求，但需求旺盛的程度差异极大；</li>
+<li>相同需求的用户极度分散，无法有效聚拢用户；</li>
+</ul>
+</blockquote>
+<h2 id="2、考研专业课的典型需求"><a href="#2、考研专业课的典型需求" class="headerlink" title="2、考研专业课的典型需求"></a>2、考研专业课的典型需求</h2><blockquote>
+<ul>
+<li>选校选专业的指导（也可说是职业生涯规划的指导）；</li>
+<li>自命题专业课考研真题；</li>
+<li>专业课考试内容的辅导；</li>
+<li>目标院校的招生政策等非透明信息（报录比、参考书、复试要求等）；</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h2 id="3、需求满足方案"><a href="#3、需求满足方案" class="headerlink" title="3、需求满足方案"></a>3、需求满足方案</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">需求</th>
+<th>需求满足方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">选校选专业</td>
+<td>选校选专业的课程或公开课；</td>
+</tr>
+<tr>
+<td style="text-align:center">考研真题</td>
+<td>收集并搭建专业课真题库，构建能够不断完善的真题库系统；</td>
+</tr>
+<tr>
+<td style="text-align:center">考试内容辅导</td>
+<td>按照教材开设标配课程；定制化1v1辅导；</td>
+</tr>
+<tr>
+<td style="text-align:center">院校招生政策等非公开信息</td>
+<td>研究生答疑；研究生信息收集；</td>
+</tr>
+</tbody>
+</table>
+<h1 id="二、项目模型"><a href="#二、项目模型" class="headerlink" title="二、项目模型"></a>二、项目模型</h1><h2 id="1-角色描述"><a href="#1-角色描述" class="headerlink" title="1. 角色描述"></a>1. 角色描述</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">角色</th>
+<th style="text-align:left">角色定位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">考生-需求方</td>
+<td style="text-align:left">国内所有对考研服务有需求的用户</td>
+</tr>
+<tr>
+<td style="text-align:center">平台</td>
+<td style="text-align:left">提供信息交换的场景，构建逻辑粘性；<br>提供增值服务，通过“人”的介入，建立情感粘性，实现商业价值的变现；</td>
+</tr>
+<tr>
+<td style="text-align:center">研究生-服务供给方</td>
+<td style="text-align:left">统招第一志愿录取，有意愿为考生提供辅导等服务的学长学姐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-云私塾供应链关系图"><a href="#2-云私塾供应链关系图" class="headerlink" title="2. 云私塾供应链关系图"></a>2. 云私塾供应链关系图</h2><blockquote>
+<ol>
+<li><p>根据供应链原理，给出整个平台的供应链关系图，包含角色路径、提供的内容、我们希望获知的用户信息、最终的需求满足。</p>
+</li>
+<li><p>整体的信息流转规则：</p>
+<ul>
+<li>校际以“专业”为最小的单元形成用户和内容的流转（多个院校开设相同专业）；</li>
+<li>校内以”科目“为最小单元形成用户和内容的流转（多个专业初试相同科目）；</li>
+<li>公共课相关内容贯穿在整个业务路程中；</li>
+</ul>
+</li>
+</ol>
+<p>ps：点击图片，可以大图查看。</p>
+</blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwyjyqq77wj32rx3lk1h5.jpg" alt=""></p>
+<blockquote>
+<ul>
+<li><strong>院校库：</strong>按照研招网的“地区-院校-专业-科目”为基础，搭建院校数据库，同时实现真题库、研究生库等的数据联动，实现院校检索的同时，呈现更为丰富多元的信息，增加用户的浏览时长。</li>
+<li><strong>真题库</strong>：按照研招网数据结构，搭建全国高校自命题专业课的考研专业课真题检索系统。真题作为考研专业课的极刚性需求，易于规模化，达到一定规模后，可以成为流量入口，对所有考生具备吸引力。</li>
+<li><strong>研究生库</strong>：按照研招网数据结构（与真题、院校结构同步，便于管理后期系统内的内容流转），搭建全国高校专业课研究生库。研究生作为考研过来人，熟知本校考试要求，且手头均有相应的资料储备，可以为考生提供==资料、辅导、答疑解惑等服务==，可以增加用户在整个系统内的活跃和留存时长，创造更多的营销机会。</li>
+<li><strong>参考书库：</strong>2013年后，教育部明确规定，不允许各大高校指定参考书及考试范围；参考书作为备考的重要参考条件，可以根据参考书给出标准化的专业课视屏课程，同时，参考书可以作为校际、校内考试科目的关系纽带，实现课程内容的内部流转；</li>
+</ul>
+</blockquote>
+<h2 id="3-项目的功能模型及实现场景"><a href="#3-项目的功能模型及实现场景" class="headerlink" title="3. 项目的功能模型及实现场景"></a>3. 项目的功能模型及实现场景</h2><p>从“考生-平台-研究生”三个角色的角度，构建的功能模型如下，此处简化平台角色的功能，平台作为功能环境的主导者，存在无限延展的可能。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwybcw46h5j33b713ik33.jpg" alt=""></p>
+<blockquote>
+<p>功能的实现场景，根据业务模型的特点，选择微信服务号+小程序，拓展到网站，后期服务接入APP。</p>
+<p><strong>业务模型特点：</strong></p>
+<ol>
+<li>对学员来说：<ul>
+<li>信息检索是最初目的，需要让用户便于体验和接触到产品；</li>
+<li>需求和供给的低匹配度，需要让提醒和访问更智能和便捷；</li>
+<li>问答及课时确认的社交属性，需要稳定便捷的交互环境；</li>
+</ul>
+</li>
+<li>对于研究生来说：<ul>
+<li>收益的持续性及额度强依赖于需求，无法有效保证，需要给用户一个较低的操作成本，且平时无消息时最好能消失在用户的关注点内；</li>
+<li>强交互的问答、课时确认等功能，需要一个稳定和便捷的交互环境；</li>
+</ul>
+</li>
+</ol>
+<p><strong>基于以上的几个特点，微信服务号作为首选的功能实现场景：</strong></p>
+<ul>
+<li>微信作为现代青年的首选社交工具，覆盖人群广，使用频率高，不易被卸载，环境稳定；</li>
+<li>服务号的关注和取关成本低，关注后如果还有期待，一般不会取关；</li>
+<li>轻资讯重功能的定位，符合云私塾的业务要求；</li>
+<li>开放的多种接口，便于进行用户管理和消息触达；</li>
+<li>有消息时提醒，没消息时静默不打扰，且沉默在用户消息列表中，不易引起厌烦；</li>
+</ul>
+</blockquote>
+<h2 id="4-目前产品中的核心业务"><a href="#4-目前产品中的核心业务" class="headerlink" title="4. 目前产品中的核心业务"></a>4. 目前产品中的核心业务</h2><h3 id="4-1-研究生问答业务"><a href="#4-1-研究生问答业务" class="headerlink" title="4.1 研究生问答业务"></a>4.1 研究生问答业务</h3><blockquote>
+<ol>
+<li><p><strong>问答业务的流程图</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwylwaiitsj31oj1bcn1t.jpg" alt=""></p>
+</li>
+<li><p><strong>核心功能点：问答收入的提现到账</strong></p>
+<p>问答作为用户的高频需求，而对于研究生来说，因收益较低，可能存在一定的打扰。需要将收益实时化，可视化，才能通过小额收益刺激研究生回答问题的积极性。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="4-2-真题检索下载业务"><a href="#4-2-真题检索下载业务" class="headerlink" title="4.2 真题检索下载业务"></a>4.2 真题检索下载业务</h3><blockquote>
+<p>“学校”- “专业” ，真题的检索下载，将作为比问答更刚性的基础需求，形成流量的入口。</p>
+</blockquote>
+<h3 id="4-3-1v1辅导业务"><a href="#4-3-1v1辅导业务" class="headerlink" title="4.3 1v1辅导业务"></a>4.3 1v1辅导业务</h3><blockquote>
+<ol>
+<li><p><strong>1v1业务的简要流程图</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/005ywUQoly1fwyehnx5roj31o22knwim.jpg" alt=""></p>
+</li>
+<li><p><strong>核心功能：1v1的分课时确认和结算逻辑</strong></p>
+<p>1v1辅导过程中必然存在研究生的替换、中途退课等各类服务性问题，所以灵活的服务调配和进度监控系统，是减轻后期运营压力、清晰业务流程必须的。该系统不依赖于我们自己的直播系统进行，授课环境更自由多元。</p>
+</li>
+<li><p><strong>1v1 服务的前期发展构想</strong></p>
+<p>1v1辅导前期，可以相对野蛮的发展，不考虑通过自有系统实现课程辅导。收费后，用户和研究生可以自由选择上课途径，我们负责监控课时结算。后期有精力后再实现通过自有直播平台的系统化授课和监控。这样不会因为系统而耽搁业务的实现。</p>
+<ul>
+<li>第一阶段：服务流程的标准化（不限定内容），不限制上课途径，只做好课时监控，可随时上线课程类产品；</li>
+<li>第二阶段：服务方式的标准化，例如通过我们自有的直播平台等进行上课，监控课程质量和内容；对于达到一定规模的科目，建立小班化；</li>
+<li>第三阶段：服务内容的标准化，根据沉淀的辅导内容，逐步制作标准化辅导的教案、课件等；</li>
+<li>第四阶段：全流程的精细化运营；</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h2 id="5-产品发展阶段规划及目标"><a href="#5-产品发展阶段规划及目标" class="headerlink" title="5. 产品发展阶段规划及目标"></a>5. 产品发展阶段规划及目标</h2><blockquote>
+<p><strong>产品的最终定位：考研一站式服务平台</strong></p>
+<p>用户通过该平台，可以满足公共课、专业课等各类考研需求。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>产品阶段</th>
+<th>时间节点</th>
+<th>主要工作</th>
+<th>产品目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>研究生入驻系统</td>
+<td>2018年10月</td>
+<td>10月份，完成底层数据库的重构，搭建研究生入驻系统，保证研究生能按照标准数据库完成入驻。</td>
+<td>3000名研究生的入驻储备；<br>（完整入驻指：基本完善院校信息，且审核通过）</td>
+</tr>
+<tr>
+<td>研究生问答系统</td>
+<td>2018年11月-12月</td>
+<td>实现“用户-研究生”的问答交互；</td>
+<td>初步满足用户对学长检索的需求，逐步累积数据，具备平台雏形。同时收集用户数据，指导后期课程建设及突破方向。</td>
+</tr>
+<tr>
+<td>真题库的搭建</td>
+<td>2018年12月-2019年7月</td>
+<td>尽量在2018年12月25日前按照标准数据库格式，搭建真题回收系统，面向全网开展真题的回收审核，为3月份的宣传储备真题资源；</td>
+<td>搭建2-3万份的真题储备，构建全网最全的真题检索系统，形成流量噱头。</td>
+</tr>
+<tr>
+<td>平台服务信息结构的搭建</td>
+<td>2019年1月-3月</td>
+<td>新版院校库检索逻辑的构建。</td>
+<td>融合院校搜索及研究生检索，实现院校库数据与问答等数据的互通。构建资讯、服务一站式服务体系。</td>
+</tr>
+<tr>
+<td>1v1的课时确认系统</td>
+<td>2019年3月-4月</td>
+<td>根据公司合规部门的要求，构建适用于考研1v1辅导的业务流程。</td>
+<td>完成1v1课程交付系统的开发，可以实现用户-研究生的服务交付及监控、酬劳支付和对账。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如能按照预期进度完成系统搭建及各类资源储备，预计2020考季可以初步检验：</p>
+<ol>
+<li>项目预期于2019年5月完成雏形，初步实现专业课相关业务的一站式服务；</li>
+<li>2019年3月份前，完成研究生储备5000人，真题库达到1万套，初步汇聚流量效应，获取用户的报考数据；</li>
+<li>2019年3月份，有成体系的1V1课程品类上线，交付销售，并有对应的服务解决方案（课程交付、进度监控、报酬结算）；</li>
+<li>2020考季，云私塾产品体系初步实现4000万的流水：<ul>
+<li>在云私塾产品体系下完成的支付（含其他产品）</li>
+<li>云私塾产品在其他渠道的有效销售；</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h1 id="三、项目运营需要的支持"><a href="#三、项目运营需要的支持" class="headerlink" title="三、项目运营需要的支持"></a>三、项目运营需要的支持</h1><h2 id="1-资金支持"><a href="#1-资金支持" class="headerlink" title="1. 资金支持"></a>1. 资金支持</h2><p>根据合规部门要求，相关支出需要以发票抵扣，但以下两项支出，金额较大，很难找到等额发票抵扣。且结算分散，研究生及传题大使较多，很难按照劳务报酬的形式完成结算，建议是否有专项资金支持。</p>
+<blockquote>
+<ol>
+<li><p>研究生入驻的招募：如果按照10元/个有效入驻，按照1万名有效研究生计算，预计需资金投入10-20万元；</p>
+<p>前期通过自有公众号、微信朋友圈、短信平台等渠道推广，后期考虑开发营销逻辑，成功邀请一人入驻，即可获得10元奖励。</p>
+</li>
+<li><p>真题库的搭建：如果按照3-5元/份真题，从市场上回收考研真题，按照2011-2018年有效计算，合计8年，达到3-5万份的储备，预计资金50余万；</p>
+<p>开发真题回收系统，面向全网，自主注册传题，后台审核通过后按照预设价格为传题者进行结算，该系统可以保证真题库的不断标准化完善。</p>
+</li>
+<li><p>后期基于微信体系的重点推广（重点以校内公众号为突破），按照2元/个关注的获客成本计算；</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="2-运营支持"><a href="#2-运营支持" class="headerlink" title="2. 运营支持"></a>2. 运营支持</h2><p>系统搭建过程中的运营工作，需熟悉这部分业务的同事进行支持。</p>
+<blockquote>
+<ol>
+<li>考生、研究生两个服务号的日常运维及前期的小客服回复答疑，需新媒体运营的支持，主要是推文的撰写编辑；</li>
+<li>研究生的招募、后期学生端的推广，需渠道支持，主要是微信公众号的投放、校园渠道的合作管理；</li>
+</ol>
+</blockquote>
+<h2 id="3-系统支持"><a href="#3-系统支持" class="headerlink" title="3. 系统支持"></a>3. 系统支持</h2><h3 id="3-1-建立产品"><a href="#3-1-建立产品" class="headerlink" title="3.1 建立产品"></a>3.1 建立产品</h3><p>公司现有业务逻辑，均要求支付体系接入鲨鱼系统。鲨鱼系统以固定产品为基础，一个产品对应一个价格，对应一个结算逻辑，在很大程度上不适用去现有的系统逻辑。</p>
+<blockquote>
+<p><strong>现有业务建立产品的逻辑：</strong></p>
+<ul>
+<li><p>真题及资料，上传审核通过后，系统自动在学员端上线一个产品，并通过消息对学员进行提醒；</p>
+</li>
+<li><p>1v1课程类，标准化产品创建出售后，每一笔订单的成本是波动的，根据学校、服务内容的不同，为研究生提供不同的档次的课时费；且1v1课程的某个订单详情理论上是可配置的；</p>
+</li>
+<li>第三方服务商的接入（对各大高校相关小团队的整合）；</li>
+</ul>
+</blockquote>
+<h3 id="3-2-财务支出"><a href="#3-2-财务支出" class="headerlink" title="3.2 财务支出"></a>3.2 财务支出</h3><p>现行逻辑中，在无发票的情况下，主要以劳务支出为主，无法实现类似助力、分销等逻辑下微信体系的支出路径。而基于微信生态体系后期的各类功能开发，将大量使用此类逻辑构建裂变增长模型。现有业务需要财务的支持：</p>
+<blockquote>
+<ul>
+<li><p>学员、研究生的邀请扩散机制；</p>
+</li>
+<li><p>商品的开放分销机制；</p>
+</li>
+<li><p>第三方服务商接入的预留；</p>
+</li>
+</ul>
+</blockquote>
+<h1 id="四、阶段性发力点"><a href="#四、阶段性发力点" class="headerlink" title="四、阶段性发力点"></a>四、阶段性发力点</h1><p>专业课的“考生-研究生”交互体系，早期的搭建，主要是投入，且规模化前很难见效。该部分的基础功能，可以构建流量的循环增长模型，同时提升体系内未付费用户的活跃时长和留存时长，创造更多的营销机会；该部分的升级功能，依赖于课程结构的设置和销售能力，创造更多的商业价值。</p>
+<table>
+<thead>
+<tr>
+<th>产品阶段</th>
+<th>时间节点</th>
+<th>阶段性发力点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>研究生入驻系统</td>
+<td>2018年10月</td>
+<td>以最快的速度完成研究生的招募入驻（线上研究生聚集的社区及线下定向推广）；</td>
+</tr>
+<tr>
+<td>研究生问答系统</td>
+<td>2018年11月-12月</td>
+<td>继续推荐研究生的招录，小范推进问答系统的运营；</td>
+</tr>
+<tr>
+<td>真题库的搭建<br>(含前端检索系统和回收系统)</td>
+<td>2018年12月-2019年2月</td>
+<td>稳定运营问答系统及研究生入驻系统；<br>全面发力，扩散真题回收系统，完成真题库的搭建；</td>
+</tr>
+<tr>
+<td>平台服务信息结构的搭建</td>
+<td>2019年3月</td>
+<td>梳理与专业课相关的课程、服务，通过一定的机制，整合进入已有系统。</td>
+</tr>
+<tr>
+<td>1v1的课时确认系统</td>
+<td>2019年3月-4月</td>
+<td>完成1v1课程交付系统的开发，可以实现用户-研究生的服务交付及监控、酬劳支付和对账。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/项目介绍/" rel="tag"># 项目介绍</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/23557/" rel="next" title="日常型需求">
+                <i class="fa fa-chevron-left"></i> 日常型需求
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/1/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://ww1.sinaimg.cn/large/005ywUQoly1fw4g098ehdj30tz0u0wkb.jpg"
+                alt="￠微笑的鱼…" />
+            
+              <p class="site-author-name" itemprop="name">￠微笑的鱼…</p>
+              <p class="site-description motion-element" itemprop="description">用产品思维做运营，用运营思维做产品</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#云私塾"><span class="nav-text">云私塾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、背景"><span class="nav-text">一、背景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、专业课市场的典型特点"><span class="nav-text">1、专业课市场的典型特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、考研专业课的典型需求"><span class="nav-text">2、考研专业课的典型需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、需求满足方案"><span class="nav-text">3、需求满足方案</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、项目模型"><span class="nav-text">二、项目模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-角色描述"><span class="nav-text">1. 角色描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-云私塾供应链关系图"><span class="nav-text">2. 云私塾供应链关系图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-项目的功能模型及实现场景"><span class="nav-text">3. 项目的功能模型及实现场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-目前产品中的核心业务"><span class="nav-text">4. 目前产品中的核心业务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-研究生问答业务"><span class="nav-text">4.1 研究生问答业务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-真题检索下载业务"><span class="nav-text">4.2 真题检索下载业务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1v1辅导业务"><span class="nav-text">4.3 1v1辅导业务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-产品发展阶段规划及目标"><span class="nav-text">5. 产品发展阶段规划及目标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、项目运营需要的支持"><span class="nav-text">三、项目运营需要的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-资金支持"><span class="nav-text">1. 资金支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-运营支持"><span class="nav-text">2. 运营支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-系统支持"><span class="nav-text">3. 系统支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-建立产品"><span class="nav-text">3.1 建立产品</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-财务支出"><span class="nav-text">3.2 财务支出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、阶段性发力点"><span class="nav-text">四、阶段性发力点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">￠微笑的鱼…</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.2</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
